@@ -9,12 +9,15 @@
 #import "UIViewViewController.h"
 
 @interface UIViewViewController ()
-@property (weak, nonatomic) IBOutlet UITextView *body;
+@property (weak, nonatomic) IBOutlet UILabel *LoveCount;
 
 @end
 
 @implementation UIViewViewController
-
+- (IBAction)LikeThisBook:(UIButton *)sender {
+    
+}
+/*
 - (IBAction)TouchToChangeTextContents:(UIButton *)sender {
     [self.body.textStorage addAttribute:NSForegroundColorAttributeName value:sender.backgroundColor range:self.body.selectedRange];
 }
@@ -29,5 +32,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+*/
 
 @end
