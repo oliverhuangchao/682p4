@@ -9,11 +9,15 @@
 #import "UIViewViewController.h"
 
 @interface UIViewViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *body;
 
 @end
 
 @implementation UIViewViewController
 
+- (IBAction)TouchToChangeTextContents:(UIButton *)sender {
+    [self.body.textStorage addAttribute:NSForegroundColorAttributeName value:sender.backgroundColor range:self.body.selectedRange];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
