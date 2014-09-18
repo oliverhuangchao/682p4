@@ -37,16 +37,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qvy-3t-2nX">
-                                <rect key="frame" x="32" y="223" width="87" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Book Details">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="yWI-RG-AY8" kind="push" identifier="ShowBookDetails" id="KfU-Vi-Opz"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="book1" translatesAutoresizingMaskIntoConstraints="NO" id="W8z-OQ-sem">
                                 <rect key="frame" x="32" y="116" width="90" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -72,6 +62,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z22-7N-2Si">
+                                <rect key="frame" x="32" y="229" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Detail">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="giD-dk-rrT" kind="push" identifier="SeeDetail" id="3pA-ra-Zu5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVW-lu-goL">
+                                <rect key="frame" x="130" y="263" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Owner">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="7yz-fB-X7I" kind="push" id="iLw-G5-h2k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D52-6O-cjm">
+                                <rect key="frame" x="212" y="263" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Others">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="giZ-AL-JjZ" kind="push" id="eJM-Xp-X3q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -84,20 +104,20 @@
             </objects>
             <point key="canvasLocation" x="1045" y="182"/>
         </scene>
-        <!--View Controller - Book Details-->
-        <scene sceneID="Zg6-MF-Ocw">
+        <!--View Controller - Owner scene-->
+        <scene sceneID="ghZ-aw-mwj">
             <objects>
-                <viewController id="yWI-RG-AY8" sceneMemberID="viewController">
+                <viewController id="7yz-fB-X7I" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gmD-2l-BuT"/>
-                        <viewControllerLayoutGuide type="bottom" id="iSO-sn-cdp"/>
+                        <viewControllerLayoutGuide type="top" id="ItV-oL-VNL"/>
+                        <viewControllerLayoutGuide type="bottom" id="t1w-E3-0M6"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="n4O-aj-9gD" customClass="BookDetails">
+                    <view key="view" contentMode="scaleToFill" id="cui-uZ-0wk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="hello world" translatesAutoresizingMaskIntoConstraints="NO" id="0bj-fZ-0JX">
-                                <rect key="frame" x="81" y="110" width="219" height="243"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="1. how many book have you aleady borrowed 2. how many are left 3. each book detail 4. what is your current score" translatesAutoresizingMaskIntoConstraints="NO" id="N7p-3a-A2F">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -106,11 +126,67 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Book Details" id="9Zf-fM-2rl"/>
+                    <navigationItem key="navigationItem" title="Owner scene" id="1SM-F2-4yP"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sUP-dD-zRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3XE-Lk-MEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="183"/>
+            <point key="canvasLocation" x="1045" y="920"/>
+        </scene>
+        <!--View Controller - Borrow Scene-->
+        <scene sceneID="J9T-db-Io1">
+            <objects>
+                <viewController id="giZ-AL-JjZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dg4-dD-Bhd"/>
+                        <viewControllerLayoutGuide type="bottom" id="2ER-vS-Hsz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ubI-jl-uNo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="1. you book list and expire time 2. each book detail" translatesAutoresizingMaskIntoConstraints="NO" id="h1p-JR-agL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Borrow Scene" id="1xL-NI-jdm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nEY-wV-sJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1472" y="920"/>
+        </scene>
+        <!--View Controller - Book Detail-->
+        <scene sceneID="6nC-3R-1IN">
+            <objects>
+                <viewController id="giD-dk-rrT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q1D-8e-fUI"/>
+                        <viewControllerLayoutGuide type="bottom" id="lFT-Z8-Fa5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mUs-jz-2a2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="black" text="1. borrow history 2. edition information 3. available time perios 4. ower information" translatesAutoresizingMaskIntoConstraints="NO" id="rPh-DH-DH7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Book Detail" id="gCk-x3-HgS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grj-SA-YG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1472" y="181"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EKS-bc-rak">
