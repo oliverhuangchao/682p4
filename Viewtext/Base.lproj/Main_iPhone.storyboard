@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View View Controller - Book Borrow-->
+        <!--View View Controller - Book Name-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="UIViewViewController" sceneMemberID="viewController">
@@ -16,19 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bkk-Pj-IU3">
-                                <rect key="frame" x="130" y="348" width="115" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="I like it!♡">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="LikeThisBook:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="r59-yf-VNU"/>
-                                    <action selector="TouchToChangeTextContents:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tZx-kF-pfC"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1C-8f-gKR">
                                 <rect key="frame" x="130" y="391" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -49,7 +36,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="😍: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivn-E4-y0K">
-                                <rect key="frame" x="32" y="267" width="42" height="21"/>
+                                <rect key="frame" x="32" y="267" width="69" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -92,19 +79,29 @@
                                     <segue destination="giZ-AL-JjZ" kind="push" id="eJM-Xp-X3q"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lp-Sb-Cye">
+                                <rect key="frame" x="63" y="391" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Like it">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addMoreLikePeopleNumber:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uj3-La-5vP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Book Borrow" id="Kf5-5w-PVT"/>
+                    <navigationItem key="navigationItem" title="Book Name" id="Kf5-5w-PVT"/>
                     <connections>
-                        <outlet property="LoveCount" destination="ivn-E4-y0K" id="ivu-UA-gyY"/>
+                        <outlet property="LoveCountLabel" destination="ivn-E4-y0K" id="F9r-Sp-zA7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1045" y="182"/>
         </scene>
-        <!--View Controller - Owner scene-->
+        <!--View Controller - Owner-->
         <scene sceneID="ghZ-aw-mwj">
             <objects>
                 <viewController id="7yz-fB-X7I" sceneMemberID="viewController">
@@ -126,13 +123,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Owner scene" id="1SM-F2-4yP"/>
+                    <navigationItem key="navigationItem" title="Owner" id="1SM-F2-4yP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3XE-Lk-MEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1045" y="920"/>
         </scene>
-        <!--View Controller - Borrow Scene-->
+        <!--View Controller - Borrower-->
         <scene sceneID="J9T-db-Io1">
             <objects>
                 <viewController id="giZ-AL-JjZ" sceneMemberID="viewController">
@@ -154,13 +151,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Borrow Scene" id="1xL-NI-jdm"/>
+                    <navigationItem key="navigationItem" title="Borrower" id="1xL-NI-jdm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEY-wV-sJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1472" y="920"/>
         </scene>
-        <!--View Controller - Book Detail-->
+        <!--View Controller - Detail-->
         <scene sceneID="6nC-3R-1IN">
             <objects>
                 <viewController id="giD-dk-rrT" sceneMemberID="viewController">
@@ -182,7 +179,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Book Detail" id="gCk-x3-HgS"/>
+                    <navigationItem key="navigationItem" title="Detail" id="gCk-x3-HgS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grj-SA-YG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
