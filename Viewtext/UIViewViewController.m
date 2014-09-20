@@ -9,24 +9,48 @@
 #import "UIViewViewController.h"
 
 @interface UIViewViewController ()
+
+/* ------ label field --------*/
 @property (weak, nonatomic) IBOutlet UILabel *LoveCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *isRentLabel;
 
 
 
 
 
 @property (nonatomic) NSInteger LoveCount;
+@property (nonatomic) BOOL IsRent;
 @end
 
 @implementation UIViewViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     self.LoveCount = 0;
+    self.IsRent = NO;
+    [self setBackground];
+    self.isRentLabel.backgroundColor = [UIColor colorWithPatternImage:[self returnRentImage:self.IsRent]];
 }
 
+
+
+- (void) setBackground
+{
+    UIImage *img_back = [UIImage imageNamed:@"woodBackground"];
+    CGFloat width = self.view.frame.size.width;
+    CGFloat height = self.view.frame.size.height;
+    UIGraphicsBeginImageContext(CGSizeMake(width, height));
+    [img_back drawInRect:CGRectMake(0, 0, width, height)];
+    img_back = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.view.backgroundColor = [UIColor colorWithPatternImage:img_back];
+}
+
+- (UIImage *) returnRentImage:(BOOL)isRent{
+    return [UIImage imageNamed:isRent? @"availablePattern": @"alreadyRentPattern"];
+}
 
 
 - (IBAction)addMoreLikePeopleNumber:(UIButton *)sender {
