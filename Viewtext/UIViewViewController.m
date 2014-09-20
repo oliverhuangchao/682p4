@@ -13,8 +13,9 @@
 /* ------ label field --------*/
 @property (weak, nonatomic) IBOutlet UILabel *LoveCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *isRentLabel;
-
-
+@property (weak, nonatomic) IBOutlet UIButton *bookFacePic;
+@property (weak, nonatomic) IBOutlet UIButton *ownerProfilepic;
+@property (weak, nonatomic) IBOutlet UIButton *borrowerProfilePic;
 
 
 
@@ -32,13 +33,16 @@
     self.IsRent = NO;
     [self setBackground];
     self.isRentLabel.backgroundColor = [UIColor colorWithPatternImage:[self returnRentImage:self.IsRent]];
-}
+    self.bookFacePic.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"book1"]];
+    self.ownerProfilepic.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"superman"]];
+    self.borrowerProfilePic.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"garfield"]];
 
+}
 
 
 - (void) setBackground
 {
-    UIImage *img_back = [UIImage imageNamed:@"woodBackground"];
+    UIImage *img_back = [UIImage imageNamed:@"wood2"];
     CGFloat width = self.view.frame.size.width;
     CGFloat height = self.view.frame.size.height;
     UIGraphicsBeginImageContext(CGSizeMake(width, height));
@@ -55,7 +59,11 @@
 
 - (IBAction)addMoreLikePeopleNumber:(UIButton *)sender {
     self.LoveCount++;
-    self.LoveCountLabel.text = [NSString stringWithFormat:@"😍: %d", self.LoveCount];
+    self.LoveCountLabel.text = [NSString stringWithFormat:@"😍: %d 😡: %d", self.LoveCount, 0];
+}
+
+- (IBAction)testButton:(UIButton *)sender {
+    self.IsRent = !self.IsRent;
 }
 
 /*
