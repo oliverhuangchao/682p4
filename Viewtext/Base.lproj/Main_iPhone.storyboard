@@ -21,7 +21,94 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yga-wb-ZWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="125"/>
+            <point key="canvasLocation" x="149" y="-691"/>
+        </scene>
+        <!--Sign Up View Controller - SignUp-->
+        <scene sceneID="Yqq-uM-rhn">
+            <objects>
+                <viewController id="9iN-u6-tpO" customClass="SignUpViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ID8-Pr-5tW"/>
+                        <viewControllerLayoutGuide type="bottom" id="0eu-IN-vSv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="flH-TO-TXF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zob-4v-dAU">
+                                <rect key="frame" x="148" y="201" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="newUserName" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glg-o9-6Of">
+                                <rect key="frame" x="55" y="234" width="225" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="setNewUserName:" destination="9iN-u6-tpO" eventType="editingChanged" id="M0c-7M-Ba3"/>
+                                    <action selector="userNameTextFieldTouchDownFunction:" destination="9iN-u6-tpO" eventType="touchDown" id="ucm-fM-PoC"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="newPassword" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kob-Wj-Wlh">
+                                <rect key="frame" x="55" y="272" width="225" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="passwordTextFieldTouchDownFunction:" destination="9iN-u6-tpO" eventType="touchDown" id="AnW-tR-W27"/>
+                                    <action selector="setNewUserPassword:" destination="9iN-u6-tpO" eventType="editingChanged" id="OZr-uK-VQZ"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rePassword" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ueV-Vc-deN">
+                                <rect key="frame" x="55" y="310" width="225" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="repasswordTextFieldTouchDownFunction:" destination="9iN-u6-tpO" eventType="touchDown" id="KoO-bf-iS6"/>
+                                    <action selector="setNewRePassword:" destination="9iN-u6-tpO" eventType="editingDidEnd" id="PRI-O9-M88"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qS-dn-Ehd">
+                                <rect key="frame" x="99" y="387" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createNewAccount:" destination="9iN-u6-tpO" eventType="touchUpInside" id="nRO-7H-PLf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKN-2t-8Ap">
+                                <rect key="frame" x="128" y="108" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="bindWithClemsonAccount:" destination="9iN-u6-tpO" eventType="touchUpInside" id="NET-We-JSd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="SignUp" id="ts9-df-eu7"/>
+                    <connections>
+                        <outlet property="clemsonBindButtonLabel" destination="KKN-2t-8Ap" id="uqs-CG-De2"/>
+                        <outlet property="inputPasswordTextField" destination="kob-Wj-Wlh" id="ypB-zv-Jb4"/>
+                        <outlet property="inputRePasswordTextField" destination="ueV-Vc-deN" id="y6O-aY-m4d"/>
+                        <outlet property="inputUserNameTextField" destination="glg-o9-6Of" id="MDE-7R-Bzm"/>
+                        <segue destination="owG-JE-JkS" kind="push" identifier="signUpLogin" id="KGA-42-Xky"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rro-4j-8xV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="168"/>
         </scene>
         <!--View View Controller - Book-->
         <scene sceneID="ufC-wZ-h7g">
@@ -132,6 +219,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1571" y="182"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0X5-s0-Ftg">
+            <objects>
+                <viewController id="lJe-xi-8B0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zlU-UL-Kbr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dp1-ku-snO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lvS-rC-4mP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="26Y-yL-uUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="616" y="-682"/>
         </scene>
         <!--View Controller - Owner-->
         <scene sceneID="ghZ-aw-mwj">
@@ -266,7 +371,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQi-m8-wH8">
-                                <rect key="frame" x="120" y="349" width="64" height="64"/>
+                                <rect key="frame" x="76" y="338" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Goooo!">
@@ -276,20 +381,33 @@
                                     <action selector="confirmLoginButton:" destination="LTJ-WB-Glj" eventType="touchUpInside" id="aaH-mz-qV7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQM-q2-wKm">
+                                <rect key="frame" x="185" y="338" width="64" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToSignUp:" destination="LTJ-WB-Glj" eventType="touchUpInside" id="5Kp-vh-yvR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="lhB-2s-bVZ"/>
                     <connections>
                         <outlet property="confirmLoginButtonLabel" destination="UQi-m8-wH8" id="xf8-e3-Nwu"/>
+                        <outlet property="signUpButtonLabel" destination="wQM-q2-wKm" id="P8H-Nj-7dM"/>
                         <outlet property="userNameTextField" destination="MF3-FX-tz8" id="yre-Qv-ffh"/>
                         <outlet property="userPasswordTextField" destination="qch-GF-Ngt" id="Myq-Oe-mAT"/>
                         <segue destination="owG-JE-JkS" kind="push" identifier="isLoginCorrect" id="iXA-En-dBq"/>
+                        <segue destination="9iN-u6-tpO" kind="push" identifier="goToSignUp" id="QDf-mx-ISi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ftm-Xe-636" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="314" y="125"/>
+            <point key="canvasLocation" x="-286" y="-691"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Ok-Ij-fke">
@@ -307,7 +425,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MjA-bp-DOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-124" y="117"/>
+            <point key="canvasLocation" x="-724" y="-699"/>
         </scene>
     </scenes>
     <resources>
@@ -318,4 +436,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="KGA-42-Xky"/>
+    </inferredMetricsTieBreakers>
 </document>

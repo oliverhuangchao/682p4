@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *confirmLoginButtonLabel;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *userPasswordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *signUpButtonLabel;
 
 
 @property (nonatomic) NSString *userName;
@@ -25,7 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.confirmLoginButtonLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tigerPaw"]];
+    
+    self.signUpButtonLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"signup"]];
     
     [self setUpForDismissKeyboard];
     
@@ -90,6 +94,14 @@
         [alert show];
     }
 }
+
+- (IBAction)goToSignUp:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"goToSignUp" sender:nil];
+
+}
+
+
+
 
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

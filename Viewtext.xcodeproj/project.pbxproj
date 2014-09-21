@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		950ED39919CF4A2800DCEEB0 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 950ED39819CF4A2800DCEEB0 /* SignUpViewController.m */; };
 		951BD8E419BDFE0C0047D195 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951BD8E319BDFE0C0047D195 /* Foundation.framework */; };
 		951BD8E619BDFE0C0047D195 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951BD8E519BDFE0C0047D195 /* CoreGraphics.framework */; };
 		951BD8E819BDFE0C0047D195 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951BD8E719BDFE0C0047D195 /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		950ED39719CF4A2800DCEEB0 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		950ED39819CF4A2800DCEEB0 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		951BD8E019BDFE0C0047D195 /* Viewtext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viewtext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		951BD8E319BDFE0C0047D195 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		951BD8E519BDFE0C0047D195 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,8 @@
 				9520C4F819CE7386006E0FD1 /* GetMethodsConnect.h */,
 				9520C4F919CE7386006E0FD1 /* GetMethodsConnect.m */,
 				951BD8F519BDFE0C0047D195 /* Main_iPhone.storyboard */,
+				950ED39719CF4A2800DCEEB0 /* SignUpViewController.h */,
+				950ED39819CF4A2800DCEEB0 /* SignUpViewController.m */,
 				951BD8F819BDFE0C0047D195 /* Main_iPad.storyboard */,
 				951BD8FB19BDFE0C0047D195 /* UIViewViewController.h */,
 				951BD8FC19BDFE0C0047D195 /* UIViewViewController.m */,
@@ -274,6 +279,7 @@
 				95E2EFFD19BEAF650083AF1C /* BookDetails.m in Sources */,
 				951BD8F419BDFE0C0047D195 /* UIViewAppDelegate.m in Sources */,
 				9520C4FA19CE7386006E0FD1 /* GetMethodsConnect.m in Sources */,
+				950ED39919CF4A2800DCEEB0 /* SignUpViewController.m in Sources */,
 				951BD8FD19BDFE0C0047D195 /* UIViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
