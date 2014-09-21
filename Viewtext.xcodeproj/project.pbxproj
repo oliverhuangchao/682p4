@@ -22,8 +22,9 @@
 		951BD90819BDFE0C0047D195 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951BD8E719BDFE0C0047D195 /* UIKit.framework */; };
 		951BD91019BDFE0C0047D195 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951BD90E19BDFE0C0047D195 /* InfoPlist.strings */; };
 		951BD91219BDFE0C0047D195 /* ViewtextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 951BD91119BDFE0C0047D195 /* ViewtextTests.m */; };
+		9520C4F719CE70CC006E0FD1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520C4F619CE70CC006E0FD1 /* LoginViewController.m */; };
+		9520C4FA19CE7386006E0FD1 /* GetMethodsConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520C4F919CE7386006E0FD1 /* GetMethodsConnect.m */; };
 		95E2EFFD19BEAF650083AF1C /* BookDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E2EFFC19BEAF650083AF1C /* BookDetails.m */; };
-		95FE0A1519CE0E9200D3DE26 /* ServiceConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FE0A1419CE0E9200D3DE26 /* ServiceConnector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,10 +58,12 @@
 		951BD90D19BDFE0C0047D195 /* ViewtextTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ViewtextTests-Info.plist"; sourceTree = "<group>"; };
 		951BD90F19BDFE0C0047D195 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		951BD91119BDFE0C0047D195 /* ViewtextTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewtextTests.m; sourceTree = "<group>"; };
+		9520C4F519CE70CC006E0FD1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9520C4F619CE70CC006E0FD1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9520C4F819CE7386006E0FD1 /* GetMethodsConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetMethodsConnect.h; path = ../GetMethodsConnect.h; sourceTree = "<group>"; };
+		9520C4F919CE7386006E0FD1 /* GetMethodsConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetMethodsConnect.m; path = ../GetMethodsConnect.m; sourceTree = "<group>"; };
 		95E2EFFB19BEAF650083AF1C /* BookDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetails.h; sourceTree = "<group>"; };
 		95E2EFFC19BEAF650083AF1C /* BookDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetails.m; sourceTree = "<group>"; };
-		95FE0A1319CE0E9200D3DE26 /* ServiceConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceConnector.h; sourceTree = "<group>"; };
-		95FE0A1419CE0E9200D3DE26 /* ServiceConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceConnector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +123,9 @@
 		951BD8E919BDFE0C0047D195 /* Viewtext */ = {
 			isa = PBXGroup;
 			children = (
+				9520C4F819CE7386006E0FD1 /* GetMethodsConnect.h */,
+				9520C4F919CE7386006E0FD1 /* GetMethodsConnect.m */,
 				951BD8F519BDFE0C0047D195 /* Main_iPhone.storyboard */,
-				95FE0A1319CE0E9200D3DE26 /* ServiceConnector.h */,
-				95FE0A1419CE0E9200D3DE26 /* ServiceConnector.m */,
 				951BD8F819BDFE0C0047D195 /* Main_iPad.storyboard */,
 				951BD8FB19BDFE0C0047D195 /* UIViewViewController.h */,
 				951BD8FC19BDFE0C0047D195 /* UIViewViewController.m */,
@@ -130,6 +133,8 @@
 				951BD8EA19BDFE0C0047D195 /* Supporting Files */,
 				95E2EFFB19BEAF650083AF1C /* BookDetails.h */,
 				95E2EFFC19BEAF650083AF1C /* BookDetails.m */,
+				9520C4F519CE70CC006E0FD1 /* LoginViewController.h */,
+				9520C4F619CE70CC006E0FD1 /* LoginViewController.m */,
 			);
 			path = Viewtext;
 			sourceTree = "<group>";
@@ -264,10 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95FE0A1519CE0E9200D3DE26 /* ServiceConnector.m in Sources */,
 				951BD8F019BDFE0C0047D195 /* main.m in Sources */,
+				9520C4F719CE70CC006E0FD1 /* LoginViewController.m in Sources */,
 				95E2EFFD19BEAF650083AF1C /* BookDetails.m in Sources */,
 				951BD8F419BDFE0C0047D195 /* UIViewAppDelegate.m in Sources */,
+				9520C4FA19CE7386006E0FD1 /* GetMethodsConnect.m in Sources */,
 				951BD8FD19BDFE0C0047D195 /* UIViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

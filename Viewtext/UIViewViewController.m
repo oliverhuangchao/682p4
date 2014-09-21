@@ -8,6 +8,7 @@
 
 #import "UIViewViewController.h"
 #import <UIKit/UIKit.h>
+#import "GetMethodsConnect.h"
 
 
 
@@ -48,40 +49,22 @@
                                                            flags:0.0];*/
     
     NSString *basic_URL = @"http://people.cs.clemson.edu/~chaoh/ios/example.php?id=hahah";
-    NSURL *url = [NSURL URLWithString:basic_URL];
-    [self getContentFromPhp:url];
+    //NSURL *url = [NSURL URLWithString:basic_URL];
+    //[self getContentFromPhp:url];
+    
+    [GetMethodsConnect getContentFromPhp:basic_URL];
+    
     
 }
 
 
-
+/*
 - (NSData *) getContentFromPhp:(NSURL *)url
 {
     NSMutableURLRequest *requests = [[NSMutableURLRequest alloc]initWithURL:url
                                                                 cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                             timeoutInterval:50];
-    /*
-    [requests setHTTPMethod:@"GET"];
-    NSDictionary *jsonDic=[NSDictionary dictionaryWithObjectsAndKeys:@"ios_json_data",@"token",@"testid",@"account",@"testpd",@"password",nil];
-    
-    NSData *inputData;
-    if ([NSJSONSerialization isValidJSONObject:jsonDic])
-    {
-        NSError *error;
-        inputData = [NSJSONSerialization dataWithJSONObject:jsonDic options:NSJSONWritingPrettyPrinted error:&error];
-    }
-    
-    NSLog(@"%@",[self data2String:inputData]);
-    
-    [requests setValue:[NSString stringWithFormat:@"%lu",(unsigned long)inputData.length] forHTTPHeaderField:@"Content-Length"];
-    [requests setValue:@"application/json"forHTTPHeaderField:@"Content-Type"];
-    [requests setHTTPBody:inputData];
-    
-    
-    //NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:requests delegate:self]; // how to use this function???
-    //[connection start];
-    */
-    
+ 
     NSHTTPURLResponse *response;
     NSData *respondData = [NSURLConnection sendSynchronousRequest:requests returningResponse:&response error:nil];
     if([response respondsToSelector:@selector(allHeaderFields)])
@@ -95,12 +78,12 @@
     return respondData;
 }
 
-
 - (NSString *) data2String: (NSData *) data{
     NSString *jsonstring = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     return jsonstring;
 
 }
+ */
 
 - (void) setBackground
 {
