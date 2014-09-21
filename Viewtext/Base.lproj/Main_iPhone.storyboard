@@ -235,7 +235,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="userNameChanged:" destination="LTJ-WB-Glj" eventType="editingChanged" id="5TA-9c-1uf"/>
+                                    <action selector="userNameChanged:" destination="LTJ-WB-Glj" eventType="editingChanged" id="hxw-r3-SYb"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVG-g0-3FS">
@@ -266,37 +266,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQi-m8-wH8">
-                                <rect key="frame" x="0.0" y="143" width="64" height="64"/>
+                                <rect key="frame" x="120" y="349" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Goooo!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="confirmLoginButton:" destination="LTJ-WB-Glj" eventType="touchUpInside" id="aaH-mz-qV7"/>
-                                    <segue destination="owG-JE-JkS" kind="push" identifier="successfulSegue" id="z1Z-GQ-vub"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzg-ep-RUF">
-                                <rect key="frame" x="129" y="425" width="76" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="lhB-2s-bVZ"/>
                     <connections>
-                        <outlet property="TestLabel" destination="yzg-ep-RUF" id="Ehb-bZ-yFN"/>
                         <outlet property="confirmLoginButtonLabel" destination="UQi-m8-wH8" id="xf8-e3-Nwu"/>
                         <outlet property="userNameTextField" destination="MF3-FX-tz8" id="yre-Qv-ffh"/>
                         <outlet property="userPasswordTextField" destination="qch-GF-Ngt" id="Myq-Oe-mAT"/>
+                        <segue destination="owG-JE-JkS" kind="push" identifier="isLoginCorrect" id="iXA-En-dBq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ftm-Xe-636" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="354" y="117"/>
+            <point key="canvasLocation" x="314" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Ok-Ij-fke">

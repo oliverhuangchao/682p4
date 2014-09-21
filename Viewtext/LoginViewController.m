@@ -14,11 +14,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *userPasswordTextField;
 
-@property (weak, nonatomic) IBOutlet UILabel *TestLabel;
-
 
 @property (nonatomic) NSString *userName;
 @property (nonatomic) NSString *userPassword;
+//@property (nonatomic) UIAlertView *alert;
 
 @end
 
@@ -28,15 +27,42 @@
     [super viewDidLoad];
     self.confirmLoginButtonLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tigerPaw"]];
     
+    [self setUpForDismissKeyboard];
+    
     // Do any additional setup after loading the view.
+}
+
+- (void) setUpForDismissKeyboard{
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    UITapGestureRecognizer *singleTapGR = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                  action:@selector(tapAnywhereToDismissKeyboard:)];
+    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
+    [nc addObserverForName:UIKeyboardWillShowNotification
+                    object:nil
+                     queue:mainQueue
+                usingBlock:^(NSNotification *note){
+                    [self.view addGestureRecognizer:singleTapGR];
+                }];
+    [nc addObserverForName:UIKeyboardWillHideNotification
+                    object:nil
+                     queue:mainQueue
+                usingBlock:^(NSNotification *note){
+                    [self.view removeGestureRecognizer:singleTapGR];
+                }];
+}
+
+-(void) tapAnywhereToDismissKeyboard:(UIGestureRecognizer *)gestureRecognizer{
+    [self.view endEditing:YES];
 }
 
 - (IBAction)userNameChanged:(UITextField *)sender {
     self.userName = self.userNameTextField.text;
+    //[sender resignFirstResponder];
 }
 
 - (IBAction)userPasswordChanged:(UITextField *)sender {
     self.userPassword = self.userPasswordTextField.text;
+    //[sender resignFirstResponder];
 }
 
 - (IBAction)confirmLoginButton:(UIButton *)sender {
@@ -47,24 +73,22 @@
     
     NSString *resultString = [[NSString alloc] initWithData:resultData
                                                   encoding:NSUTF8StringEncoding];
-    //self.TestLabel.text = resultString;
     
-    NSLog(resultString);
-    /*
+    NSLog(@"%@",searchURL);
+    
     if ([resultString isEqual: @"yes"]){
-        [self performSegueWithIdentifier:@"successfulSegue" sender:nil];
+        [self performSegueWithIdentifier:@"isLoginCorrect" sender:nil];
     }
     else{
         UIAlertView *alert;
-        alert = [[UIAlertView alloc] initWithTitle:@"testmassage"
-                                                        message:"helloworld"
-                                                      delegatee:nil
-                                              cancelButtonTitle:@"ok"
-                                              otherButtonTitles:nil];
+        alert = [[UIAlertView alloc] initWithTitle:@"Wrong Passworld!"
+                                           message:@"You have input the wrong password!"
+                                          delegate:nil
+                                 cancelButtonTitle:@"Retry"
+                                 otherButtonTitles: nil];
         
         [alert show];
     }
-     */
 }
 
 /*
