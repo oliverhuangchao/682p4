@@ -98,6 +98,15 @@
                                     <action selector="testButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ty8-ZD-zxb"/>
                                 </connections>
                             </button>
+                            <tableViewCell contentMode="scaleToFill" fixedFrame="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BasicCell" translatesAutoresizingMaskIntoConstraints="NO" id="9bV-vg-4nO">
+                                <rect key="frame" x="0.0" y="438" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9bV-vg-4nO" id="afc-q0-X0M">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.97124123090000003" green="0.0" blue="0.010538944749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

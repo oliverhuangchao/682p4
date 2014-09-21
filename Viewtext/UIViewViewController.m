@@ -7,6 +7,10 @@
 //
 
 #import "UIViewViewController.h"
+#import <UIKit/UIKit.h>
+
+
+
 
 @interface UIViewViewController ()
 
@@ -30,15 +34,69 @@
 {
     [super viewDidLoad];
     self.LoveCount = 0;
-    self.IsRent = NO;
+    self.IsRent = YES;
     [self setBackground];
     self.isRentLabel.backgroundColor = [UIColor colorWithPatternImage:[self returnRentImage:self.IsRent]];
     self.bookFacePic.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"book1"]];
     self.ownerProfilepic.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"superman"]];
     self.borrowerProfilePic.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"garfield"]];
+    
+    /*MysqlConnection *connection = [MysqlConnection connectToHost:@"mysql1.cs.clemson.edu"
+                                                            user:@"chaoh"
+                                                        password:@"hc"
+                                                          schema:@"chaoh_201308_cpsc462"
+                                                           flags:0.0];*/
+    
+    /* ------ test example code -----*/
+    NSURL *url = [NSURL URLWithString:@"http://people.cs.clemson.edu/~chaoh/ios/example.php"];
+    NSMutableURLRequest *requests = [[NSMutableURLRequest alloc]initWithURL:url
+                                                                cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                            timeoutInterval:50];
+    
+    [requests setHTTPMethod:@"POST"];
+    NSDictionary *jsonDic=[NSDictionary dictionaryWithObjectsAndKeys:@"ios_json_data",@"token",@"testid",@"account",@"testid",@"password",nil];
+    
+    
+    
+    NSData *data;
+    if ([NSJSONSerialization isValidJSONObject:jsonDic])
+    {
+        NSError *error;
+        data = [NSJSONSerialization dataWithJSONObject:jsonDic options:NSJSONWritingPrettyPrinted error:&error];
+    }
+   
+    
+    [requests setValue:[NSString stringWithFormat:@"%lu",(unsigned long)data.length] forHTTPHeaderField:@"Content-Length"];
+    [requests setValue:@"application/json"forHTTPHeaderField:@"Content-Type"];
+    [requests setHTTPBody:data];
 
+ 
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:requests delegate:self];
+
+   // [connection start];
+    
+    NSHTTPURLResponse *response;
+    NSData *respondData = [NSURLConnection sendSynchronousRequest:requests returningResponse:&response error:nil];
+    
+    if([response respondsToSelector:@selector(allHeaderFields)])
+    {
+       // NSDictionary *dictionary =  [response allHeaderFields];
+        //NSLog([dictionary description]);
+        NSLog(@"%@",[[response MIMEType] lowercaseString]);
+        NSString *respondBody = [[NSString alloc] initWithData:respondData encoding:NSUTF8StringEncoding];
+        NSLog(@"%@",respondBody);
+    }
+    
+    
 }
 
+
+- (NSString *) Json2String: (NSData *) data{
+    NSString *jsonstring = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"Json is %@", jsonstring);
+    return jsonstring;
+
+}
 
 - (void) setBackground
 {
@@ -59,6 +117,7 @@
 
 - (IBAction)addMoreLikePeopleNumber:(UIButton *)sender {
     self.LoveCount++;
+    //self.LoveCountLabel.text = @"hello wolrd";
     self.LoveCountLabel.text = [NSString stringWithFormat:@"😍: %d 😡: %d", self.LoveCount, 0];
 }
 
