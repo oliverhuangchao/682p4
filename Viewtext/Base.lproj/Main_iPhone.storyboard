@@ -58,6 +58,7 @@
                     <navigationItem key="navigationItem" title="Search" id="dfg-wl-MiR"/>
                     <connections>
                         <outlet property="searchBookNameTextField" destination="07Q-hG-W51" id="3Sj-n1-766"/>
+                        <outlet property="searchBookTableView" destination="RXv-2z-aaG" id="Nnh-9D-nFI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yga-wb-ZWF" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -13,11 +13,20 @@
 @property (weak, nonatomic) IBOutlet UITextField *searchBookNameTextField;
 
 
-@property (nonatomic) NSString *searchBookName;
-@property (nonatomic) NSArray *bookListArray;
+@property (nonatomic) NSString *searchBookPartName;
+@property (nonatomic) NSMutableArray *bookListArray;
+
+@property (nonatomic) NSMutableArray *resultBookName;
+@property (nonatomic) NSMutableArray *resultBookProfile;
+@property (nonatomic) NSMutableArray *resultBookOwner;
+@property (nonatomic) NSMutableArray *resultBookStatus;
+@property (nonatomic) NSMutableArray *resultBookValue;
+
+@property (weak, nonatomic) IBOutlet UITableView *searchBookTableView;
+
+
+
 @end
-
-
 
 @implementation SearchBookViewController
 
@@ -27,7 +36,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.bookListArray = [NSArray arrayWithObjects:@"hello",@"world", nil];
+    self.bookListArray = [NSMutableArray arrayWithObjects:@"hello",@"world",@"chaoh", nil];
     [self setUpForDismissKeyboard];
 
 }
@@ -46,7 +55,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     cell.textLabel.text = [self.bookListArray objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:@"garfield"];
+    
+    NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://people.cs.clemson.edu/~chaoh/ios/pic/superman.jpg"]];
+    
+    cell.imageView.image = [UIImage imageWithData:imageData];
+    
     return cell;
 }
 
@@ -56,20 +69,34 @@
 }
 
 - (IBAction)searchBookNameGetResult:(UITextField *)sender {
-    self.searchBookName = self.searchBookNameTextField.text;
-    NSString *basic_URL = [NSString stringWithFormat:@"http://people.cs.clemson.edu/~chaoh/ios/searchBook.php?bookName=%@",self.searchBookName];
+    [self.bookListArray removeAllObjects];
+    self.searchBookPartName = self.searchBookNameTextField.text;
+    NSString *basic_URL = [NSString stringWithFormat:@"http://people.cs.clemson.edu/~chaoh/ios/searchBook.php?bookName=%@",self.searchBookPartName];
     NSData *resultData = [GetMethodsConnect getContentFromPhp:basic_URL];
-    NSString *resultString = [[NSString alloc] initWithData:resultData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",resultString);
+    //NSString *resultString = [[NSString alloc] initWithData:resultData encoding:NSUTF8StringEncoding];
+    //NSLog(@"%@",resultString);
+    NSArray *resultArray = [NSJSONSerialization JSONObjectWithData:resultData options:kNilOptions error:nil];
+    for (int i = 0;i<resultArray.count;i++)
+    {
+        [self.bookListArray addObject:[[resultArray objectAtIndex:i] objectAtIndex:1]];
+        
+        
+        [self.resultBookName addObject:[[resultArray objectAtIndex:i] objectAtIndex:1]];
+        [self.resultBookProfile addObject:[[resultArray objectAtIndex:i] objectAtIndex:3]];
+        [self.resultBookOwner addObject:[[resultArray objectAtIndex:i] objectAtIndex:4]];
+        [self.resultBookStatus addObject:[[resultArray objectAtIndex:i] objectAtIndex:7]];
+        [self.resultBookValue addObject:[[resultArray objectAtIndex:i] objectAtIndex:6]];
+    }
+    
+    [self.searchBookTableView reloadData];
+    NSLog(@"array: %@", self.bookListArray);
 }
 
 
-
-
-
-
-
-
+-(void) deaWithArray
+{
+    
+}
 
 
 - (void) setUpForDismissKeyboard{
