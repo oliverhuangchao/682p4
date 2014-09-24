@@ -8,10 +8,13 @@
 
 #import "SearchBookViewController.h"
 #import "GetMethodsConnect.h"
+#import "UIViewViewController.h"
 
 @interface SearchBookViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *searchBookNameTextField;
 
+
+@property (nonatomic) NSArray *resultArray;
 
 @property (nonatomic) NSString *searchBookPartName;
 @property (nonatomic) NSMutableArray *bookListArray;
@@ -21,14 +24,14 @@
 @property (nonatomic) NSMutableArray *resultBookOwner;
 @property (nonatomic) NSMutableArray *resultBookStatus;
 @property (nonatomic) NSMutableArray *resultBookValue;
-
+@property (nonatomic) NSMutableArray *resultBookID;
 
 @property (nonatomic) NSMutableArray *bookProfilePic;
-
 @property (weak, nonatomic) IBOutlet UITableView *searchBookTableView;
-
 @property (weak, nonatomic) IBOutlet UILabel *showBookCountLabel;
+@property (nonatomic) NSMutableArray *selectedBookInfo;
 
+//@property (nonatomic) NSInteger selectedBook;
 
 @end
 
@@ -39,10 +42,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //self.bookListArray  = [NSMutableArray arrayWithObjects:@"hello",@"world",@"chaoh", nil];
-    //self.bookProfilePic  = [NSMutableArray arrayWithObjects:@"hello",@"world",@"chaoh", nil];
-
     
     self.bookListArray = [[NSMutableArray alloc] init];
     self.bookProfilePic = [[NSMutableArray alloc] init];
@@ -52,11 +51,28 @@
     self.resultBookProfile = [[NSMutableArray alloc] init];
     self.resultBookStatus = [[NSMutableArray alloc] init];
     self.resultBookValue = [[NSMutableArray alloc] init];
+    self.resultBookID = [[NSMutableArray alloc] init];
 
-
-    //self.resultBookName  = [NSMutableArray arrayWithObjects:@"hello",@"world",@"chaoh", nil];
     [self setUpForDismissKeyboard];
 
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if([segue.identifier isEqualToString:@"goToBookDetailPage"]){
+        UIViewViewController *controller = (UIViewViewController *)segue.destinationViewController;
+        controller.searchedBookInfo = self.selectedBookInfo;
+    }
+    
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger row = indexPath.row;
+    self.selectedBookInfo = [[NSMutableArray alloc] initWithArray:[self.resultArray objectAtIndex:row]];
+    [self performSegueWithIdentifier:@"goToBookDetailPage" sender:nil];
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -119,21 +135,23 @@
     
     NSData *resultData = [GetMethodsConnect getContentFromPhp:basic_URL];
  
-    NSArray *resultArray = [NSJSONSerialization JSONObjectWithData:resultData options:kNilOptions error:nil];
+    self.resultArray = [NSJSONSerialization JSONObjectWithData:resultData options:kNilOptions error:nil];
     
-    for (int i = 0;i<resultArray.count;i++)
+    for (int i = 0;i<self.resultArray.count;i++)
     {
         //[self.bookListArray addObject:[[resultArray objectAtIndex:i] objectAtIndex:1]];
         
-        [self.resultBookName addObject:[[resultArray objectAtIndex:i] objectAtIndex:1]];
+        [self.resultBookName addObject:[[self.resultArray objectAtIndex:i] objectAtIndex:1]];
 
-        [self.resultBookProfile addObject:[[resultArray objectAtIndex:i] objectAtIndex:4]];
+        [self.resultBookProfile addObject:[[self.resultArray objectAtIndex:i] objectAtIndex:4]];
         
-        [self.resultBookOwner addObject:[[resultArray objectAtIndex:i] objectAtIndex:3]];
+        [self.resultBookOwner addObject:[[self.resultArray objectAtIndex:i] objectAtIndex:3]];
         
-        [self.resultBookStatus addObject:[[resultArray objectAtIndex:i] objectAtIndex:7]];
+        [self.resultBookStatus addObject:[[self.resultArray objectAtIndex:i] objectAtIndex:7]];
         
-        [self.resultBookValue addObject:[[resultArray objectAtIndex:i] objectAtIndex:6]];
+        [self.resultBookValue addObject:[[self.resultArray objectAtIndex:i] objectAtIndex:5]];
+        
+        [self.resultBookID addObject:[[self.resultArray objectAtIndex:i] objectAtIndex:0]];
     }
     
     
@@ -149,7 +167,6 @@
                                [self.resultBookName objectAtIndex:i],
                                [self.resultBookValue objectAtIndex:i]];
         }
-        NSLog(@"%@",finalShowString);
         [self.bookListArray addObject:finalShowString];
         
     }
@@ -161,10 +178,6 @@
 }
 
 
--(void) deaWithArray
-{
-    
-}
 
 
 - (void) setUpForDismissKeyboard{

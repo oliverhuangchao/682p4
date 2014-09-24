@@ -10,4 +10,6 @@
 
 @interface SearchBookViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic) NSInteger selectedBook;
+
 @end
