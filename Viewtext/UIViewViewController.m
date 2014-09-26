@@ -23,11 +23,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *borrowerProfilePic;
 @property (weak, nonatomic) IBOutlet UINavigationItem *searchedBookName;
 
+@property (weak, nonatomic) IBOutlet UIButton *likeorDislikeButton;
 
 
 
 @property (nonatomic) NSInteger LoveCount;
-
+@property (nonatomic) NSInteger bookBorrowPrice;
 @property (nonatomic) NSString* commonPicString;
 @end
 
@@ -46,21 +47,39 @@
     else
         self.isRentLabel.backgroundColor =[UIColor colorWithPatternImage:[self returnRentImage:NO]];
 
-    
 
-    self.LoveCount = 0;
+    self.LoveCount = [[self.searchedBookInfo objectAtIndex:8] intValue];
+    self.bookBorrowPrice = [[self.searchedBookInfo objectAtIndex:5] intValue];
+    
     [self setBackground];
     
+    self.LoveCountLabel.text = [NSString stringWithFormat:@"😍: %d 💰: %d", self.LoveCount, self.bookBorrowPrice];
+
     
-    self.bookFacePic.backgroundColor = [UIColor colorWithPatternImage:[self getUIImageFromUrlString:[self.searchedBookInfo objectAtIndex:4]]];
+    
+    UIImage *img_back = [self getUIImageFromUrlString:[self.searchedBookInfo objectAtIndex:4]];
+    CGFloat width = self.bookFacePic.frame.size.width;
+    CGFloat height = self.bookFacePic.frame.size.height;
+    UIGraphicsBeginImageContext(CGSizeMake(width, height));
+    [img_back drawInRect:CGRectMake(0, 0, width, height)];
+    img_back = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.bookFacePic.backgroundColor = [UIColor colorWithPatternImage:img_back];
+    
+    
+    //self.bookFacePic.backgroundColor = [UIColor colorWithPatternImage:[self getUIImageFromUrlString:[self.searchedBookInfo objectAtIndex:4]]];
     
     
     self.ownerProfilepic.backgroundColor = [UIColor colorWithPatternImage:[self getUIImageFromUrlString:                                   [self getImageStringFromDatabaseUsingUserID:3]]];
     
+    
     self.borrowerProfilePic.backgroundColor = [UIColor colorWithPatternImage:[self getUIImageFromUrlString:                                   [self getImageStringFromDatabaseUsingUserID:6]]];
 
 }
-
+/*
+ input: database column num, it is a userid
+ output: get a string which is user's profile pic name
+ */
 -(NSString *) getImageStringFromDatabaseUsingUserID:(NSInteger) num;
 {
     NSString *userProfileURLString = @"http://people.cs.clemson.edu/~chaoh/ios/getUserProfile.php?id=";
@@ -72,7 +91,12 @@
     NSString *stringProfilePicName = [userProfileArray objectAtIndex:0];
     return stringProfilePicName;
 }
-
+/* 
+    input :  a string which is a picture's full name
+    output : a UIImage file which loaded from my server
+    
+    should add a function which can input the size of the picture
+ */
 -(UIImage *) getUIImageFromUrlString: (NSString *) tmpURLString;
 {
     NSString *picUrlString = [self.commonPicString stringByAppendingString: tmpURLString];
@@ -100,9 +124,18 @@
 
 
 - (IBAction)addMoreLikePeopleNumber:(UIButton *)sender {
-    self.LoveCount++;
-    //self.LoveCountLabel.text = @"hello wolrd";
-    self.LoveCountLabel.text = [NSString stringWithFormat:@"😍: %d 😡: %d", self.LoveCount, 0];
+    if ([self.likeorDislikeButton.titleLabel.text isEqual: @"Like"]) {
+        [sender setTitle:@"DisLike" forState:UIControlStateNormal];
+        self.LoveCount ++ ;
+    }
+    else{
+        [sender setTitle:@"Like" forState:UIControlStateNormal];
+        self.LoveCount -- ;
+    }
+    self.LoveCountLabel.text = [NSString stringWithFormat:@"😍: %d 💰: %d", self.LoveCount, self.bookBorrowPrice];
+    //NSString *userProfileURLString = @"http://people.cs.clemson.edu/~chaoh/ios/getUserProfile.php?id=";
+
+
 }
 
 

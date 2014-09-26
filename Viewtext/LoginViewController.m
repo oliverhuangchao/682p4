@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "GetMethodsConnect.h"
-
+#import "SignUpViewController.h"
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *confirmLoginButtonLabel;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
@@ -96,6 +96,8 @@
 }
 
 - (IBAction)goToSignUp:(UIButton *)sender {
+ //   login.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController: SignUpViewController animated:YES completion:nil];
     [self performSegueWithIdentifier:@"goToSignUp" sender:nil];
 
 }
