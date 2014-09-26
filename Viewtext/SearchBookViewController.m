@@ -99,7 +99,8 @@
         NSString *picUrlString = [commonString stringByAppendingString:[self.resultBookProfile objectAtIndex:i]];
 
         NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: picUrlString]];
-        
+     
+        //NSLog(@"%@",picUrlString);
         [self.bookProfilePic addObject:[UIImage imageWithData:imageData]];
     }
     

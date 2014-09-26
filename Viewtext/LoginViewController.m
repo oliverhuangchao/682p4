@@ -8,7 +8,8 @@
 
 #import "LoginViewController.h"
 #import "GetMethodsConnect.h"
-
+#import "SignUpViewController.h"
+#import "SearchBookViewController.h"
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *confirmLoginButtonLabel;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
@@ -81,7 +82,10 @@
     NSLog(@"%@",searchURL);
     
     if ([resultString isEqual: @"yes"]){
-        [self performSegueWithIdentifier:@"isLoginCorrect" sender:nil];
+        //[self performSegueWithIdentifier:@"isLoginCorrect" sender:nil];
+        SearchBookViewController *next = [self.storyboard instantiateViewControllerWithIdentifier:@"searchBookPage"];
+        [self.navigationController pushViewController:next animated:NO];
+        [UIView transitionWithView:self.navigationController.view duration:1 options:UIViewAnimationOptionTransitionFlipFromRight animations:nil completion:nil];
     }
     else{
         UIAlertView *alert;
@@ -96,7 +100,12 @@
 }
 
 - (IBAction)goToSignUp:(UIButton *)sender {
-    [self performSegueWithIdentifier:@"goToSignUp" sender:nil];
+    
+    SignUpViewController *next = [self.storyboard instantiateViewControllerWithIdentifier:@"signUpPage"];
+    [self.navigationController pushViewController:next animated:NO];
+    [UIView transitionWithView:self.navigationController.view duration:1 options:UIViewAnimationOptionTransitionFlipFromRight animations:nil completion:nil];
+    
+   // [self performSegueWithIdentifier:@"goToSignUp" sender:nil];
 
 }
 

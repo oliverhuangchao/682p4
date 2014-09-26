@@ -7,7 +7,7 @@
         <!--Search Book View Controller - Search-->
         <scene sceneID="W0L-bB-M32">
             <objects>
-                <viewController id="owG-JE-JkS" customClass="SearchBookViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchBookPage" id="owG-JE-JkS" customClass="SearchBookViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tzg-4D-WMi"/>
                         <viewControllerLayoutGuide type="bottom" id="QXt-nT-26h"/>
@@ -70,7 +70,7 @@
         <!--Sign Up View Controller - SignUp-->
         <scene sceneID="Yqq-uM-rhn">
             <objects>
-                <viewController id="9iN-u6-tpO" customClass="SignUpViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpPage" id="9iN-u6-tpO" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ID8-Pr-5tW"/>
                         <viewControllerLayoutGuide type="bottom" id="0eu-IN-vSv"/>
@@ -245,6 +245,7 @@
                         <outlet property="bookFacePic" destination="z22-7N-2Si" id="QpC-7X-9t6"/>
                         <outlet property="borrowerProfilePic" destination="D52-6O-cjm" id="Axw-CQ-wt6"/>
                         <outlet property="isRentLabel" destination="ahb-SJ-KIW" id="haK-pC-hT0"/>
+                        <outlet property="likeorDislikeButton" destination="2Lp-Sb-Cye" id="YCj-bw-DIA"/>
                         <outlet property="ownerProfilepic" destination="NVW-lu-goL" id="bwo-IK-MKm"/>
                         <outlet property="searchedBookName" destination="Kf5-5w-PVT" id="0kz-QS-K3s"/>
                     </connections>
@@ -407,6 +408,17 @@
                                     <action selector="goToSignUp:" destination="LTJ-WB-Glj" eventType="touchUpInside" id="5Kp-vh-yvR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFe-Sj-Ggx">
+                                <rect key="frame" x="269" y="77" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="i">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Tnc-uu-pMF" kind="push" identifier="basicInfoPage" id="ciu-Ca-Utz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -423,6 +435,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ftm-Xe-636" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-786" y="-655"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fjY-aj-wHf">
+            <objects>
+                <viewController id="Tnc-uu-pMF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ARQ-FE-7mI"/>
+                        <viewControllerLayoutGuide type="bottom" id="FN2-2g-Bqr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ohS-aA-8cV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nV9-20-g0H">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="751"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">App name:
+ 'Book Recycle' 
+Author:
+ Chao Huang
+ chaoh@g.clemson.edu 
+Background:  
+I plan to explore an App which can help students borrow book among themselves. As we know, books sometimes are really expensive for some of the students. However, most of the books are used only one semester.  Normally, you have two choices: sell it or keep in your book store. Or you can choose to buy the e-book which is easy to store but have the similar price. 
+Now I can provide the third way: borrow it to someone strange and earn money from it.  
+The function includes:
+1.	Each user can sign up, login in search the current books available and see their details. The detail includes: book name, book owner, book author, return date and any other information (finished). 
+2.	User can also see their borrow history (on going). 
+3.	Book owners can see their books status (on going). 
+4.	User can give comment and stars to all the books (on going). 
+5.	Personal information protected (on going)
+
+How to use:
+You can click  'sign up' to sign your name and  password. Pay attention: repassword and password should be same.
+Or you can use my information 'chaoh' &amp; '123' You can search the book title. You do not need to remember the exact name. You can use some of the name such as 'ios'. I have already create three books related to 'ios' in the database. You can click each book to see the detail information
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1ld-34-sKy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ki6-Gg-Ydo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-292" y="-1254"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Ok-Ij-fke">
@@ -452,6 +511,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iXA-En-dBq"/>
+        <segue reference="KGA-42-Xky"/>
     </inferredMetricsTieBreakers>
 </document>
