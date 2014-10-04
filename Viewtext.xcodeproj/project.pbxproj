@@ -26,6 +26,9 @@
 		951BD91219BDFE0C0047D195 /* ViewtextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 951BD91119BDFE0C0047D195 /* ViewtextTests.m */; };
 		9520C4F719CE70CC006E0FD1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520C4F619CE70CC006E0FD1 /* LoginViewController.m */; };
 		9520C4FA19CE7386006E0FD1 /* GetMethodsConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520C4F919CE7386006E0FD1 /* GetMethodsConnect.m */; };
+		9584332B19E08435007B0074 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9584332A19E08435007B0074 /* libsqlite3.dylib */; };
+		9584332E19E08522007B0074 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9584332D19E08522007B0074 /* DBManager.m */; };
+		9584333219E0A3A1007B0074 /* sampledb.sql in Resources */ = {isa = PBXBuildFile; fileRef = 9584333119E0A3A1007B0074 /* sampledb.sql */; };
 		95E2EFFD19BEAF650083AF1C /* BookDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E2EFFC19BEAF650083AF1C /* BookDetails.m */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +71,10 @@
 		9520C4F619CE70CC006E0FD1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9520C4F819CE7386006E0FD1 /* GetMethodsConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetMethodsConnect.h; path = ../GetMethodsConnect.h; sourceTree = "<group>"; };
 		9520C4F919CE7386006E0FD1 /* GetMethodsConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetMethodsConnect.m; path = ../GetMethodsConnect.m; sourceTree = "<group>"; };
+		9584332A19E08435007B0074 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		9584332C19E08522007B0074 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		9584332D19E08522007B0074 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		9584333119E0A3A1007B0074 /* sampledb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampledb.sql; sourceTree = "<group>"; };
 		95E2EFFB19BEAF650083AF1C /* BookDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetails.h; sourceTree = "<group>"; };
 		95E2EFFC19BEAF650083AF1C /* BookDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetails.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9584332B19E08435007B0074 /* libsqlite3.dylib in Frameworks */,
 				951BD8E619BDFE0C0047D195 /* CoreGraphics.framework in Frameworks */,
 				951BD8E819BDFE0C0047D195 /* UIKit.framework in Frameworks */,
 				951BD8E419BDFE0C0047D195 /* Foundation.framework in Frameworks */,
@@ -99,6 +107,7 @@
 		951BD8D719BDFE0C0047D195 = {
 			isa = PBXGroup;
 			children = (
+				9584333119E0A3A1007B0074 /* sampledb.sql */,
 				951BD8E919BDFE0C0047D195 /* Viewtext */,
 				951BD90B19BDFE0C0047D195 /* ViewtextTests */,
 				951BD8E219BDFE0C0047D195 /* Frameworks */,
@@ -118,6 +127,7 @@
 		951BD8E219BDFE0C0047D195 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9584332A19E08435007B0074 /* libsqlite3.dylib */,
 				951BD8E319BDFE0C0047D195 /* Foundation.framework */,
 				951BD8E519BDFE0C0047D195 /* CoreGraphics.framework */,
 				951BD8E719BDFE0C0047D195 /* UIKit.framework */,
@@ -145,6 +155,8 @@
 				95E2EFFC19BEAF650083AF1C /* BookDetails.m */,
 				9520C4F519CE70CC006E0FD1 /* LoginViewController.h */,
 				9520C4F619CE70CC006E0FD1 /* LoginViewController.m */,
+				9584332C19E08522007B0074 /* DBManager.h */,
+				9584332D19E08522007B0074 /* DBManager.m */,
 			);
 			path = Viewtext;
 			sourceTree = "<group>";
@@ -257,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9584333219E0A3A1007B0074 /* sampledb.sql in Resources */,
 				951BD8FA19BDFE0C0047D195 /* Main_iPad.storyboard in Resources */,
 				951BD8FF19BDFE0C0047D195 /* Images.xcassets in Resources */,
 				951BD8F719BDFE0C0047D195 /* Main_iPhone.storyboard in Resources */,
@@ -282,6 +295,7 @@
 				951BD8F019BDFE0C0047D195 /* main.m in Sources */,
 				9520C4F719CE70CC006E0FD1 /* LoginViewController.m in Sources */,
 				95E2EFFD19BEAF650083AF1C /* BookDetails.m in Sources */,
+				9584332E19E08522007B0074 /* DBManager.m in Sources */,
 				951BD8F419BDFE0C0047D195 /* UIViewAppDelegate.m in Sources */,
 				9520C4FA19CE7386006E0FD1 /* GetMethodsConnect.m in Sources */,
 				950ED39C19CF622E00DCEEB0 /* SearchBookViewController.m in Sources */,

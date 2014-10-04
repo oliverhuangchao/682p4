@@ -8,7 +8,7 @@
 
 #import "SignUpViewController.h"
 #import "GetMethodsConnect.h"
-
+#import "SearchBookViewController.h"
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *inputUserNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *inputPasswordTextField;
@@ -107,7 +107,12 @@
                                                        encoding:NSUTF8StringEncoding];
         NSLog(@"%@",resultString);
         if([resultString isEqualToString:@"yes"])
-            [self performSegueWithIdentifier:@"signUpLogin" sender:nil];
+        {
+            //[self performSegueWithIdentifier:@"signUpLogin" sender:nil];
+            SearchBookViewController *next = [self.storyboard instantiateViewControllerWithIdentifier:@"searchBookPage"];
+            [self.navigationController pushViewController:next animated:NO];
+            [UIView transitionWithView:self.navigationController.view duration:1 options:UIViewAnimationOptionTransitionFlipFromRight animations:nil completion:nil];
+        }
     }
 }
 

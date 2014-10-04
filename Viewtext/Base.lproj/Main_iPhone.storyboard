@@ -7,7 +7,7 @@
         <!--Search Book View Controller - Search-->
         <scene sceneID="W0L-bB-M32">
             <objects>
-                <viewController id="owG-JE-JkS" customClass="SearchBookViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchBookPage" id="owG-JE-JkS" customClass="SearchBookViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tzg-4D-WMi"/>
                         <viewControllerLayoutGuide type="bottom" id="QXt-nT-26h"/>
@@ -70,7 +70,7 @@
         <!--Sign Up View Controller - SignUp-->
         <scene sceneID="Yqq-uM-rhn">
             <objects>
-                <viewController id="9iN-u6-tpO" customClass="SignUpViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpPage" id="9iN-u6-tpO" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ID8-Pr-5tW"/>
                         <viewControllerLayoutGuide type="bottom" id="0eu-IN-vSv"/>
@@ -511,6 +511,6 @@ Or you can use my information 'chaoh' &amp; '123' You can search the book titl
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iXA-En-dBq"/>
+        <segue reference="KGA-42-Xky"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,7 +9,7 @@
 #import "UIViewViewController.h"
 #import <UIKit/UIKit.h>
 #import "GetMethodsConnect.h"
-
+#import <sqlite3.h>
 #import "SearchBookViewController.h"
 
 
@@ -70,10 +70,10 @@
     //self.bookFacePic.backgroundColor = [UIColor colorWithPatternImage:[self getUIImageFromUrlString:[self.searchedBookInfo objectAtIndex:4]]];
     
     
-    self.ownerProfilepic.backgroundColor = [UIColor colorWithPatternImage:[self getUIImageFromUrlString:                                   [self getImageStringFromDatabaseUsingUserID:3]]];
+    self.ownerProfilepic.backgroundColor = [UIColor colorWithPatternImage:[self getUIImageFromUrlString:[self getImageStringFromDatabaseUsingUserID:3]]];
     
     
-    self.borrowerProfilePic.backgroundColor = [UIColor colorWithPatternImage:[self getUIImageFromUrlString:                                   [self getImageStringFromDatabaseUsingUserID:6]]];
+    self.borrowerProfilePic.backgroundColor = [UIColor colorWithPatternImage:[self getUIImageFromUrlString:[self getImageStringFromDatabaseUsingUserID:6]]];
 
 }
 /*
