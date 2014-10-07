@@ -12,4 +12,5 @@
 
 @property (nonatomic) NSInteger bookID;
 @property (nonatomic) NSMutableArray *searchedBookInfo;
+@property (nonatomic,strong) NSString *localUserName;
 @end

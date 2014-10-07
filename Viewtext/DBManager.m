@@ -8,6 +8,7 @@
 
 #import "DBManager.h"
 #import <sqlite3.h>
+
 @interface DBManager()
 
 @property (nonatomic, strong) NSString *documentsDirectory;
@@ -20,32 +21,42 @@
 
 @end
 
+
+
 @implementation DBManager
 
 -(instancetype) initWithDatabaseFilename:(NSString *)dbFilename
 {
-    self = [super init];
-    if (self)
-    {
-        NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
-        self.documentsDirectory = [path objectAtIndex:0];
-        self.databaseFilename = dbFilename;
-        [self copyDatabaseIntoDocumentsDirectory];
+     self = [super init];
+    if (self) {
+        // Set the documents directory path to the documentsDirectory property.
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        self.documentsDirectory = [paths objectAtIndex:0];
         
+        //NSLog(@"%@",self.documentsDirectory);
+        // Keep the database filename.
+        self.databaseFilename = dbFilename;
+        
+        // Copy the database file into the documents directory if necessary.
+        [self copyDatabaseIntoDocumentsDirectory];
     }
     return self;
-}
+    }
 
 -(void) copyDatabaseIntoDocumentsDirectory{
     NSString* destinationPath = [self.documentsDirectory stringByAppendingPathComponent:self.databaseFilename];
     if (![[NSFileManager defaultManager] fileExistsAtPath:destinationPath]) {
         NSString *sourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:self.databaseFilename];
         NSError *error;
+        //NSLog(@"source path is %@",sourcePath);
+
         [[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:destinationPath error:&error];
         if (error != nil) {
             NSLog(@"%@",[error localizedDescription]);
         }
     }
+    //NSLog(@" destination path is  %@",destinationPath);
+
 }
 
 -(void) runQuery:(const char *)query isQueryExecutable:(BOOL)queryExecutable{

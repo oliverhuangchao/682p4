@@ -29,7 +29,7 @@
 @property (nonatomic) NSMutableArray *bookProfilePic;
 @property (weak, nonatomic) IBOutlet UITableView *searchBookTableView;
 @property (weak, nonatomic) IBOutlet UILabel *showBookCountLabel;
-@property (nonatomic) NSMutableArray *selectedBookInfo;
+@property (weak, nonatomic) IBOutlet UINavigationItem *TopBarTitleLabel;
 
 //@property (nonatomic) NSInteger selectedBook;
 
@@ -52,7 +52,10 @@
     self.resultBookStatus = [[NSMutableArray alloc] init];
     self.resultBookValue = [[NSMutableArray alloc] init];
     self.resultBookID = [[NSMutableArray alloc] init];
-
+    
+    self.TopBarTitleLabel.title = self.userName;
+    
+    
     [self setUpForDismissKeyboard];
 
 }

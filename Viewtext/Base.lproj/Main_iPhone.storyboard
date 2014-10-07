@@ -57,6 +57,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="dfg-wl-MiR"/>
                     <connections>
+                        <outlet property="TopBarTitleLabel" destination="dfg-wl-MiR" id="lPl-6S-O8M"/>
                         <outlet property="searchBookNameTextField" destination="07Q-hG-W51" id="3Sj-n1-766"/>
                         <outlet property="searchBookTableView" destination="RXv-2z-aaG" id="Nnh-9D-nFI"/>
                         <outlet property="showBookCountLabel" destination="PBi-w8-IRS" id="9Lv-eq-tKJ"/>
@@ -65,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yga-wb-ZWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="185" y="-691"/>
+            <point key="canvasLocation" x="189" y="-219"/>
         </scene>
         <!--Sign Up View Controller - SignUp-->
         <scene sceneID="Yqq-uM-rhn">
@@ -147,12 +148,79 @@
                         <outlet property="inputPasswordTextField" destination="kob-Wj-Wlh" id="ypB-zv-Jb4"/>
                         <outlet property="inputRePasswordTextField" destination="ueV-Vc-deN" id="y6O-aY-m4d"/>
                         <outlet property="inputUserNameTextField" destination="glg-o9-6Of" id="MDE-7R-Bzm"/>
-                        <segue destination="owG-JE-JkS" kind="push" identifier="signUpLogin" id="KGA-42-Xky"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rro-4j-8xV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-320" y="-10"/>
+            <point key="canvasLocation" x="-281" y="-10"/>
+        </scene>
+        <!--User Detail View Controller-->
+        <scene sceneID="PeF-UG-etF">
+            <objects>
+                <viewController storyboardIdentifier="UserDetailPage" id="Rwn-pw-inF" customClass="UserDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dD6-SY-avg"/>
+                        <viewControllerLayoutGuide type="bottom" id="23e-Uq-MhW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qam-0f-U11">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s33-WV-Jyu">
+                                <rect key="frame" x="20" y="83" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go to Search">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToSearchPage:" destination="Rwn-pw-inF" eventType="touchUpInside" id="kvh-Jc-uFK"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BQ2-kn-kGb">
+                                <rect key="frame" x="20" y="118" width="280" height="342"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="idCellRecord" textLabel="Zms-vK-Yxk" detailTextLabel="ibl-XU-he6" style="IBUITableViewCellStyleSubtitle" id="kl9-g9-F5M">
+                                        <rect key="frame" x="0.0" y="22" width="280" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kl9-g9-F5M" id="YJO-x9-bc1">
+                                            <rect key="frame" x="0.0" y="0.0" width="213" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zms-vK-Yxk">
+                                                    <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ibl-XU-he6">
+                                                    <rect key="frame" x="15" y="25" width="43" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yEA-hn-C3r"/>
+                    <connections>
+                        <outlet property="searchedBookHistoryTableView" destination="BQ2-kn-kGb" id="eXM-5N-SCa"/>
+                        <outlet property="userNameLabel" destination="yEA-hn-C3r" id="2lA-8D-Ljk"/>
+                        <segue destination="owG-JE-JkS" kind="push" identifier="searchBookSegue" id="dJW-jI-vLr"/>
+                        <segue destination="vXZ-lx-hvc" kind="push" identifier="goToLocalSearchPage" id="47e-Xl-Uwi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pzf-md-lSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-241" y="-679"/>
         </scene>
         <!--View View Controller - Book-->
         <scene sceneID="ufC-wZ-h7g">
@@ -428,8 +496,8 @@
                         <outlet property="signUpButtonLabel" destination="wQM-q2-wKm" id="P8H-Nj-7dM"/>
                         <outlet property="userNameTextField" destination="MF3-FX-tz8" id="yre-Qv-ffh"/>
                         <outlet property="userPasswordTextField" destination="qch-GF-Ngt" id="Myq-Oe-mAT"/>
-                        <segue destination="owG-JE-JkS" kind="push" identifier="isLoginCorrect" id="iXA-En-dBq"/>
                         <segue destination="9iN-u6-tpO" kind="push" identifier="goToSignUp" id="QDf-mx-ISi"/>
+                        <segue destination="Rwn-pw-inF" kind="push" identifier="isLoginCorrect" id="CNf-cx-13P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ftm-Xe-636" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -481,7 +549,7 @@ Or you can use my information 'chaoh' &amp; '123' You can search the book titl
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ki6-Gg-Ydo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-292" y="-1254"/>
+            <point key="canvasLocation" x="-276" y="-1338"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Ok-Ij-fke">
@@ -511,6 +579,6 @@ Or you can use my information 'chaoh' &amp; '123' You can search the book titl
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KGA-42-Xky"/>
+        <segue reference="47e-Xl-Uwi"/>
     </inferredMetricsTieBreakers>
 </document>

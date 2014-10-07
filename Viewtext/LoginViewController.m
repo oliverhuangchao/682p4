@@ -10,6 +10,9 @@
 #import "GetMethodsConnect.h"
 #import "SignUpViewController.h"
 #import "SearchBookViewController.h"
+#import "UserDetailViewController.h"
+
+
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *confirmLoginButtonLabel;
@@ -83,10 +86,10 @@
     NSLog(@"%@",searchURL);
     
     if ([resultString isEqual: @"yes"]){
-        //[self performSegueWithIdentifier:@"isLoginCorrect" sender:nil];
-        SearchBookViewController *next = [self.storyboard instantiateViewControllerWithIdentifier:@"searchBookPage"];
-        [self.navigationController pushViewController:next animated:NO];
-        [UIView transitionWithView:self.navigationController.view duration:1 options:UIViewAnimationOptionTransitionFlipFromRight animations:nil completion:nil];
+        [self performSegueWithIdentifier:@"isLoginCorrect" sender:nil];
+        //SearchBookViewController *next = [self.storyboard instantiateViewControllerWithIdentifier:@"UserDetailPage"];
+        //[self.navigationController pushViewController:next animated:NO];
+        //[UIView transitionWithView:self.navigationController.view duration:1 options:UIViewAnimationOptionTransitionFlipFromRight animations:nil completion:nil];
     }
     else{
         UIAlertView *alert;
@@ -111,34 +114,14 @@
 }
 
 
-
-
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString: @"isLoginCorrect"]){
+        UserDetailViewController *controller = (UserDetailViewController *)segue.destinationViewController;
+        controller.currentUserName = self.userName;
     }
-    return self;
+    
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-*/
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

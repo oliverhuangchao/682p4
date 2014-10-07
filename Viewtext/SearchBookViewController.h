@@ -11,5 +11,9 @@
 @interface SearchBookViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) NSInteger selectedBook;
+@property (nonatomic) NSString *userName;
+@property (nonatomic) NSInteger userID;
+
+@property (nonatomic) NSMutableArray *selectedBookInfo;
 
 @end
