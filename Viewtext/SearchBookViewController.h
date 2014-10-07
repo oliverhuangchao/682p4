@@ -12,7 +12,7 @@
 
 @property (nonatomic) NSInteger selectedBook;
 @property (nonatomic) NSString *userName;
-@property (nonatomic) NSInteger userID;
+@property (nonatomic) NSInteger localUserID;
 
 @property (nonatomic) NSMutableArray *selectedBookInfo;
 

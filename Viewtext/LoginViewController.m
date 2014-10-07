@@ -83,13 +83,23 @@
     NSString *resultString = [[NSString alloc] initWithData:resultData
                                                   encoding:NSUTF8StringEncoding];
     
-    NSLog(@"%@",searchURL);
+    //NSLog(@"%@",searchURL);
     
     if ([resultString isEqual: @"yes"]){
-        [self performSegueWithIdentifier:@"isLoginCorrect" sender:nil];
         //SearchBookViewController *next = [self.storyboard instantiateViewControllerWithIdentifier:@"UserDetailPage"];
         //[self.navigationController pushViewController:next animated:NO];
         //[UIView transitionWithView:self.navigationController.view duration:1 options:UIViewAnimationOptionTransitionFlipFromRight animations:nil completion:nil];
+        
+        
+        //get userID here
+        searchURL =[NSString stringWithFormat:@"http://people.cs.clemson.edu/~chaoh/ios/getUserIDbyUserName.php?name=%@&password=%@",self.userName,self.userPassword];
+        NSData *resultData = [GetMethodsConnect getContentFromPhp:searchURL];
+        NSArray *resultArray = [NSJSONSerialization JSONObjectWithData:resultData options:kNilOptions error:nil];
+        self.userID =[[resultArray objectAtIndex:0] integerValue] ;
+
+        [self performSegueWithIdentifier:@"isLoginCorrect" sender:nil];
+
+        
     }
     else{
         UIAlertView *alert;
@@ -118,6 +128,7 @@
     if([segue.identifier isEqualToString: @"isLoginCorrect"]){
         UserDetailViewController *controller = (UserDetailViewController *)segue.destinationViewController;
         controller.currentUserName = self.userName;
+        controller.currentUserID = self.userID;
     }
     
 }

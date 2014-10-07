@@ -10,6 +10,6 @@
 
 @interface LoginViewController : UIViewController
 
-
+@property (nonatomic) NSInteger userID;
 
 @end

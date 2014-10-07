@@ -11,7 +11,7 @@
 @interface UserDetailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSString *currentUserName;
-@property (nonatomic, strong) NSString *currentUserID;
+@property (nonatomic) NSInteger currentUserID;
 
 @property (weak, nonatomic) IBOutlet UITableView *searchedBookHistoryTableView;
 

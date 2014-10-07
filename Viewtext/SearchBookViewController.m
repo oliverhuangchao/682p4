@@ -9,9 +9,12 @@
 #import "SearchBookViewController.h"
 #import "GetMethodsConnect.h"
 #import "UIViewViewController.h"
+#import "DBManager.h"
 
 @interface SearchBookViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *searchBookNameTextField;
+
+@property (nonatomic,strong) DBManager *dbManager;
 
 
 @property (nonatomic) NSArray *resultArray;
@@ -55,7 +58,8 @@
     
     self.TopBarTitleLabel.title = self.userName;
     
-    
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"mynewdb.sql"];
+
     [self setUpForDismissKeyboard];
 
 }
@@ -75,6 +79,19 @@
 {
     NSInteger row = indexPath.row;
     self.selectedBookInfo = [[NSMutableArray alloc] initWithArray:[self.resultArray objectAtIndex:row]];
+    
+    //add a sqlite operation here
+    NSString *query;
+    
+    //insert bookid bookname bookvalue
+    query = [NSString stringWithFormat:@"insert into localBook values(%d,'%@',%d);",[[self.selectedBookInfo objectAtIndex:0] integerValue],[self.selectedBookInfo objectAtIndex:1 ],[[self.selectedBookInfo objectAtIndex:5] integerValue]];
+    [self.dbManager executeQuery:query];
+    
+    // insert id userid bookid time
+    query = [NSString stringWithFormat:@"insert into localHistory values(null,%d,%d,'2014');",self.localUserID,[[self.selectedBookInfo objectAtIndex:0] integerValue]];
+    [self.dbManager executeQuery:query];
+    
+    
     [self performSegueWithIdentifier:@"goToBookDetailPage" sender:nil];
 }
 

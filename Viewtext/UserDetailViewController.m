@@ -43,7 +43,7 @@
 {
     [super viewDidLoad];
     
-    self.userNameLabel.title = self.currentUserName;
+    self.userNameLabel.title = [NSString stringWithFormat:@"%@ History", self.currentUserName];
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"mynewdb.sql"];
     
     self.searchedBookHistoryTableView.delegate = self;
@@ -53,7 +53,6 @@
     //[self tempAddData];
     [self loadLocalUserInfor];
   
-
 }
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
@@ -71,10 +70,10 @@
     self.selectedBookInfo =[[NSMutableArray alloc] initWithArray:[resultArray objectAtIndex:0]];
 
     // Perform the segue.
-    [self performSegueWithIdentifier:@"goToLocalSearchPage" sender:self];
+    [self performSegueWithIdentifier:@"goToLocalBookDetailPage" sender:self];
 }
 
-
+/*
 -(void) tempAddData{
     NSString *query;
     
@@ -87,11 +86,17 @@
     query = [NSString stringWithFormat:@"insert into localHistory values(1,1,1,'2014');"];
     [self.dbManager executeQuery:query];
 }
-
+*/
 - (IBAction)goToSearchPage:(id)sender {
     [self performSegueWithIdentifier:@"searchBookSegue" sender:nil];
 }
 
+- (IBAction)clearHistoryButton:(id)sender {
+    NSString *query;
+    query = [NSString stringWithFormat:@"delete from localHistory where userID = '%d';",self.currentUserID];
+    [self.dbManager executeQuery:query];
+    [self.searchedBookHistoryTableView reloadData];
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.arrPeopleInfo.count;
@@ -126,7 +131,7 @@
     }
     else{
         NSLog(@"create a new user!!!");
-        query = [NSString stringWithFormat:@"insert into localUser values(null,'%@');",self.currentUserName];
+        query = [NSString stringWithFormat:@"insert into localUser values(%d,'%@');",self.currentUserID,self.currentUserName];
         [self.dbManager executeQuery:query];
     }
     
@@ -154,8 +159,9 @@
     if([segue.identifier isEqualToString: @"searchBookSegue"]){
         SearchBookViewController *controller = (SearchBookViewController *)segue.destinationViewController;
         controller.userName = self.currentUserName;
+        controller.localUserID = self.currentUserID;
     }
-    if([segue.identifier isEqualToString: @"goToLocalSearchPage"]){
+    if([segue.identifier isEqualToString: @"goToLocalBookDetailPage"]){
         UIViewViewController *controller = (UIViewViewController *)segue.destinationViewController;
         controller.localUserName = self.currentUserName;
         controller.searchedBookInfo = self.selectedBookInfo;
