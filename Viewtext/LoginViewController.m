@@ -10,7 +10,7 @@
 #import "GetMethodsConnect.h"
 #import "SignUpViewController.h"
 #import "SearchBookViewController.h"
-#import "UserDetailViewController.h"
+#import "UserProfileViewController.h"
 
 
 
@@ -126,9 +126,9 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString: @"isLoginCorrect"]){
-        UserDetailViewController *controller = (UserDetailViewController *)segue.destinationViewController;
-        controller.currentUserName = self.userName;
-        controller.currentUserID = self.userID;
+        UserProfileViewController *controller = (UserProfileViewController *)segue.destinationViewController;
+        controller.userName = self.userName;
+        controller.userID = self.userID;
     }
     
 }

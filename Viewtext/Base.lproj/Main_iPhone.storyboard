@@ -152,7 +152,73 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rro-4j-8xV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-281" y="-10"/>
+            <point key="canvasLocation" x="-1697" y="590"/>
+        </scene>
+        <!--User Profile View Controller-->
+        <scene sceneID="rra-Up-WU8">
+            <objects>
+                <viewController id="rcd-Ex-60l" customClass="UserProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FgJ-JJ-fjT"/>
+                        <viewControllerLayoutGuide type="bottom" id="T9a-Dc-cRi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YQT-pM-BWy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nnS-b7-uDI">
+                                <rect key="frame" x="34" y="70" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQO-xg-47U">
+                                <rect key="frame" x="190" y="70" width="110" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CurrentValue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-4z-00l">
+                                <rect key="frame" x="190" y="115" width="110" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95l-On-aP0">
+                                <rect key="frame" x="67" y="259" width="81" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ViewHistory">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToSearchHistoryPageButton:" destination="rcd-Ex-60l" eventType="touchUpInside" id="oV3-XJ-gAl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOt-WO-gYo">
+                                <rect key="frame" x="190" y="259" width="97" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ChangeProfile">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eU3-uU-sbW"/>
+                    <connections>
+                        <outlet property="changeProfileButtonProfile" destination="TOt-WO-gYo" id="vRt-T0-OKp"/>
+                        <outlet property="curerntUserName" destination="NQO-xg-47U" id="P23-nA-SGD"/>
+                        <outlet property="currentUserNameTitle" destination="eU3-uU-sbW" id="CDM-Xv-5wk"/>
+                        <outlet property="currentUserProfile" destination="nnS-b7-uDI" id="jKV-NL-sBZ"/>
+                        <outlet property="currentUserValue" destination="pdT-4z-00l" id="Hpj-rr-mdV"/>
+                        <outlet property="viewHistoryButtonProfile" destination="95l-On-aP0" id="RmM-Xy-6SR"/>
+                        <segue destination="Rwn-pw-inF" kind="push" identifier="goToUserSearchDetail" id="9SJ-Ez-3f6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9LE-Ks-9Py" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-791" y="-70"/>
         </scene>
         <!--User Detail View Controller-->
         <scene sceneID="PeF-UG-etF">
@@ -253,6 +319,9 @@
                                 <state key="normal" title="Borrow it">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="borrowThisBookButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0JN-LH-A7g"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="😍: 0  😡:0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivn-E4-y0K">
                                 <rect key="frame" x="58" y="263" width="127" height="21"/>
@@ -327,11 +396,76 @@
                         <outlet property="likeorDislikeButton" destination="2Lp-Sb-Cye" id="YCj-bw-DIA"/>
                         <outlet property="ownerProfilepic" destination="NVW-lu-goL" id="bwo-IK-MKm"/>
                         <outlet property="searchedBookName" destination="Kf5-5w-PVT" id="0kz-QS-K3s"/>
+                        <segue destination="rlU-1s-evd" kind="push" identifier="goToSelectDatePage" id="wsp-3A-r9P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="625" y="-691"/>
+            <point key="canvasLocation" x="665" y="-939"/>
+        </scene>
+        <!--Borrow Detail View Controller-->
+        <scene sceneID="aib-zu-rlG">
+            <objects>
+                <viewController id="rlU-1s-evd" customClass="BorrowDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iZD-sG-050"/>
+                        <viewControllerLayoutGuide type="bottom" id="5LM-2F-HYP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="24b-7V-dTY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wxc-uo-Qdi">
+                                <rect key="frame" x="178" y="95" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="getReturnDays:" destination="rlU-1s-evd" eventType="editingChanged" id="vDi-DB-htZ"/>
+                                </connections>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ROP-Df-pP8">
+                                <rect key="frame" x="31" y="95" width="100" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huq-DI-sSN">
+                                <rect key="frame" x="263" y="99" width="37" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42p-T8-Uht">
+                                <rect key="frame" x="178" y="148" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajX-SL-z5x">
+                                <rect key="frame" x="167" y="193" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitRequest:" destination="rlU-1s-evd" eventType="touchUpInside" id="rRV-VH-24a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9hg-5k-YOe"/>
+                    <connections>
+                        <outlet property="bookProfilePicture" destination="ROP-Df-pP8" id="SoU-Ab-Jyh"/>
+                        <outlet property="borrowDaysTextView" destination="wxc-uo-Qdi" id="p9h-w4-TTS"/>
+                        <outlet property="currentUserTitleLabel" destination="9hg-5k-YOe" id="yX7-YO-toZ"/>
+                        <outlet property="totalCostLabel" destination="42p-T8-Uht" id="qnn-I0-71P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfw-TW-S5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737" y="-4"/>
         </scene>
         <!--View Controller - Owner-->
         <scene sceneID="ghZ-aw-mwj">
@@ -359,7 +493,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3XE-Lk-MEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1389" y="312"/>
+            <point key="canvasLocation" x="1325" y="-24"/>
         </scene>
         <!--View Controller - Borrower-->
         <scene sceneID="J9T-db-Io1">
@@ -387,7 +521,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEY-wV-sJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1384" y="-632"/>
+            <point key="canvasLocation" x="1272" y="-904"/>
         </scene>
         <!--View Controller - Detail-->
         <scene sceneID="6nC-3R-1IN">
@@ -415,12 +549,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grj-SA-YG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="-1411"/>
+            <point key="canvasLocation" x="1246" y="-1719"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="3r3-PB-24z">
             <objects>
-                <viewController id="LTJ-WB-Glj" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginPage" id="LTJ-WB-Glj" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9qX-mT-GT1"/>
                         <viewControllerLayoutGuide type="bottom" id="7og-Cg-U6Z"/>
@@ -508,12 +642,12 @@
                         <outlet property="userNameTextField" destination="MF3-FX-tz8" id="yre-Qv-ffh"/>
                         <outlet property="userPasswordTextField" destination="qch-GF-Ngt" id="Myq-Oe-mAT"/>
                         <segue destination="9iN-u6-tpO" kind="push" identifier="goToSignUp" id="QDf-mx-ISi"/>
-                        <segue destination="Rwn-pw-inF" kind="push" identifier="isLoginCorrect" id="CNf-cx-13P"/>
+                        <segue destination="rcd-Ex-60l" kind="push" identifier="isLoginCorrect" id="uCT-Uo-Jrh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ftm-Xe-636" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-786" y="-655"/>
+            <point key="canvasLocation" x="-1390" y="-639"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fjY-aj-wHf">
@@ -578,7 +712,7 @@ Or you can use my information 'chaoh' &amp; '123' You can search the book titl
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MjA-bp-DOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1224" y="-663"/>
+            <point key="canvasLocation" x="-1828" y="-647"/>
         </scene>
     </scenes>
     <resources>
@@ -590,6 +724,6 @@ Or you can use my information 'chaoh' &amp; '123' You can search the book titl
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="tiv-k1-Fs6"/>
+        <segue reference="47e-Xl-Uwi"/>
     </inferredMetricsTieBreakers>
 </document>

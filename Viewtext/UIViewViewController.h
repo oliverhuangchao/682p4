@@ -10,7 +10,8 @@
 
 @interface UIViewViewController : UIViewController
 
-@property (nonatomic) NSInteger bookID;
 @property (nonatomic) NSMutableArray *searchedBookInfo;
 @property (nonatomic,strong) NSString *localUserName;
+@property (nonatomic) NSInteger localUserID;
+
 @end

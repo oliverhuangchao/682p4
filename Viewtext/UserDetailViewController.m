@@ -73,20 +73,7 @@
     [self performSegueWithIdentifier:@"goToLocalBookDetailPage" sender:self];
 }
 
-/*
--(void) tempAddData{
-    NSString *query;
-    
-    query = [NSString stringWithFormat:@"insert into localUser values(1,'chaoh');"];
-    [self.dbManager executeQuery:query];
-    
-    query = [NSString stringWithFormat:@"insert into localBook values(1,'hello world',10);"];
-    [self.dbManager executeQuery:query];
-    
-    query = [NSString stringWithFormat:@"insert into localHistory values(1,1,1,'2014');"];
-    [self.dbManager executeQuery:query];
-}
-*/
+
 - (IBAction)goToSearchPage:(id)sender {
     [self performSegueWithIdentifier:@"searchBookSegue" sender:nil];
 }
@@ -112,7 +99,6 @@
     NSArray *isCurrentUserExist = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     
     if (isCurrentUserExist.count!= 0) {
-        NSLog(@"find user  %@", self.currentUserName);
         query = [NSString stringWithFormat:@"select b.bookName, h.searchDate,b.bookID from localHistory h, localUser u,localBook b where u.userID = h.userID and h.bookID = b.bookID and u.userName = '%@'",self.currentUserName];
 
         self.arrPeopleInfo = [self.dbManager loadDataFromDB:query];
@@ -122,15 +108,12 @@
             
         }
         else{
-            NSLog(@"Could not execute the query.");
+           NSLog(@"Could not execute the query.");
         }
-        
-        //self.arrPeopleInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
         
         [self.searchedBookHistoryTableView reloadData];
     }
     else{
-        NSLog(@"create a new user!!!");
         query = [NSString stringWithFormat:@"insert into localUser values(%d,'%@');",self.currentUserID,self.currentUserName];
         [self.dbManager executeQuery:query];
     }
@@ -138,16 +121,14 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellRecord" forIndexPath:indexPath];
     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellRecord" forIndexPath:indexPath];
     NSInteger indexOfBookName = [self.dbManager.arrColumnNames indexOfObject:@"bookName"];
     NSInteger indexOfBookDate = [self.dbManager.arrColumnNames indexOfObject:@"searchDate"];
     
-    //NSLog([self.dbManager.arrColumnNames objectAtIndex:0]);
     cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.arrPeopleInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfBookName]];
-    
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Search Date is: %@", [[self.arrPeopleInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfBookDate]];
+    
     return cell;
 }
 
@@ -165,6 +146,7 @@
         UIViewViewController *controller = (UIViewViewController *)segue.destinationViewController;
         controller.localUserName = self.currentUserName;
         controller.searchedBookInfo = self.selectedBookInfo;
+        controller.localUserID = self.currentUserID;
     }
 }
 

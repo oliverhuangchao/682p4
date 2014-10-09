@@ -11,7 +11,7 @@
 #import "GetMethodsConnect.h"
 #import <sqlite3.h>
 #import "SearchBookViewController.h"
-
+#import "BorrowDetailViewController.h"
 
 @interface UIViewViewController ()
 
@@ -55,8 +55,6 @@
     
     self.LoveCountLabel.text = [NSString stringWithFormat:@"😍: %d 💰: %d", self.LoveCount, self.bookBorrowPrice];
 
-    
-    
     UIImage *img_back = [self getUIImageFromUrlString:[self.searchedBookInfo objectAtIndex:4]];
     CGFloat width = self.bookFacePic.frame.size.width;
     CGFloat height = self.bookFacePic.frame.size.height;
@@ -66,12 +64,7 @@
     UIGraphicsEndImageContext();
     self.bookFacePic.backgroundColor = [UIColor colorWithPatternImage:img_back];
     
-    
-    //self.bookFacePic.backgroundColor = [UIColor colorWithPatternImage:[self getUIImageFromUrlString:[self.searchedBookInfo objectAtIndex:4]]];
-    
-    
     self.ownerProfilepic.backgroundColor = [UIColor colorWithPatternImage:[self getUIImageFromUrlString:[self getImageStringFromDatabaseUsingUserID:3]]];
-    
     
     self.borrowerProfilePic.backgroundColor = [UIColor colorWithPatternImage:[self getUIImageFromUrlString:[self getImageStringFromDatabaseUsingUserID:6]]];
 
@@ -133,8 +126,22 @@
         self.LoveCount -- ;
     }
     self.LoveCountLabel.text = [NSString stringWithFormat:@"😍: %d 💰: %d", self.LoveCount, self.bookBorrowPrice];
-    //NSString *userProfileURLString = @"http://people.cs.clemson.edu/~chaoh/ios/getUserProfile.php?id=";
 
+}
+- (IBAction)borrowThisBookButton:(id)sender {
+    
+    [self performSegueWithIdentifier:@"goToSelectDatePage" sender:nil];
+
+    
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString: @"goToSelectDatePage"]){
+        BorrowDetailViewController *controller = (BorrowDetailViewController *)segue.destinationViewController;
+        controller.currentUserName = self.localUserName;
+        controller.searchedBookInfo = self.searchedBookInfo;
+        controller.currentUserID = self.localUserID;
+    }
 
 }
 

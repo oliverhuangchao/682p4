@@ -26,6 +26,9 @@
 		951BD91219BDFE0C0047D195 /* ViewtextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 951BD91119BDFE0C0047D195 /* ViewtextTests.m */; };
 		9520C4F719CE70CC006E0FD1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520C4F619CE70CC006E0FD1 /* LoginViewController.m */; };
 		9520C4FA19CE7386006E0FD1 /* GetMethodsConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520C4F919CE7386006E0FD1 /* GetMethodsConnect.m */; };
+		953434EA19E7437A0004642B /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953434E919E7437A0004642B /* UserProfileViewController.m */; };
+		955FBDC719E61A53000EE1E3 /* BorrowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955FBDC619E61A53000EE1E3 /* BorrowDetailViewController.m */; };
+		955FBDCA19E625B7000EE1E3 /* ConvenientTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 955FBDC919E625B7000EE1E3 /* ConvenientTools.m */; };
 		9584332B19E08435007B0074 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9584332A19E08435007B0074 /* libsqlite3.dylib */; };
 		9584332E19E08522007B0074 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9584332D19E08522007B0074 /* DBManager.m */; };
 		95872B5319E1DFAC0064F9EC /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95872B5219E1DFAC0064F9EC /* UserDetailViewController.m */; };
@@ -72,6 +75,12 @@
 		9520C4F619CE70CC006E0FD1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9520C4F819CE7386006E0FD1 /* GetMethodsConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetMethodsConnect.h; path = ../GetMethodsConnect.h; sourceTree = "<group>"; };
 		9520C4F919CE7386006E0FD1 /* GetMethodsConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetMethodsConnect.m; path = ../GetMethodsConnect.m; sourceTree = "<group>"; };
+		953434E819E7437A0004642B /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		953434E919E7437A0004642B /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
+		955FBDC519E61A53000EE1E3 /* BorrowDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorrowDetailViewController.h; sourceTree = "<group>"; };
+		955FBDC619E61A53000EE1E3 /* BorrowDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorrowDetailViewController.m; sourceTree = "<group>"; };
+		955FBDC819E625B7000EE1E3 /* ConvenientTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvenientTools.h; sourceTree = "<group>"; };
+		955FBDC919E625B7000EE1E3 /* ConvenientTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvenientTools.m; sourceTree = "<group>"; };
 		9584332A19E08435007B0074 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9584332C19E08522007B0074 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		9584332D19E08522007B0074 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
@@ -144,7 +153,13 @@
 				95E701A319E3876A00B4C91D /* mynewdb.sql */,
 				9520C4F819CE7386006E0FD1 /* GetMethodsConnect.h */,
 				9520C4F919CE7386006E0FD1 /* GetMethodsConnect.m */,
+				955FBDC819E625B7000EE1E3 /* ConvenientTools.h */,
+				955FBDC919E625B7000EE1E3 /* ConvenientTools.m */,
 				951BD8F519BDFE0C0047D195 /* Main_iPhone.storyboard */,
+				953434E819E7437A0004642B /* UserProfileViewController.h */,
+				953434E919E7437A0004642B /* UserProfileViewController.m */,
+				955FBDC519E61A53000EE1E3 /* BorrowDetailViewController.h */,
+				955FBDC619E61A53000EE1E3 /* BorrowDetailViewController.m */,
 				95872B5119E1DFAC0064F9EC /* UserDetailViewController.h */,
 				95872B5219E1DFAC0064F9EC /* UserDetailViewController.m */,
 				950ED39A19CF622E00DCEEB0 /* SearchBookViewController.h */,
@@ -306,6 +321,9 @@
 				950ED39C19CF622E00DCEEB0 /* SearchBookViewController.m in Sources */,
 				950ED39919CF4A2800DCEEB0 /* SignUpViewController.m in Sources */,
 				95872B5319E1DFAC0064F9EC /* UserDetailViewController.m in Sources */,
+				955FBDC719E61A53000EE1E3 /* BorrowDetailViewController.m in Sources */,
+				953434EA19E7437A0004642B /* UserProfileViewController.m in Sources */,
+				955FBDCA19E625B7000EE1E3 /* ConvenientTools.m in Sources */,
 				951BD8FD19BDFE0C0047D195 /* UIViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

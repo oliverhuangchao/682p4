@@ -109,22 +109,20 @@
         if([resultString isEqualToString:@"yes"])
         {
             //[self performSegueWithIdentifier:@"signUpLogin" sender:nil];
-            SearchBookViewController *next = [self.storyboard instantiateViewControllerWithIdentifier:@"searchBookPage"];
+            SearchBookViewController *next = [self.storyboard instantiateViewControllerWithIdentifier:@"loginPage"];
             [self.navigationController pushViewController:next animated:NO];
             [UIView transitionWithView:self.navigationController.view duration:1 options:UIViewAnimationOptionTransitionFlipFromRight animations:nil completion:nil];
         }
     }
 }
 
-
-
-/*
-- (void)didReceiveMemoryWarning
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
 
+/*
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -138,11 +136,7 @@
 //#pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
  
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
+
 */
 
 @end
