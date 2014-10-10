@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userPasswordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButtonLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *informationButtonLabel;
 
 @property (nonatomic) NSString *userName;
 @property (nonatomic) NSString *userPassword;
@@ -31,6 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //self.informationButtonLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Information"]];
     
     self.confirmLoginButtonLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tigerPaw"]];
     

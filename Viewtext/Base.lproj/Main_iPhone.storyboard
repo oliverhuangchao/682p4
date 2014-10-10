@@ -621,10 +621,15 @@
                                     <action selector="goToSignUp:" destination="LTJ-WB-Glj" eventType="touchUpInside" id="5Kp-vh-yvR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFe-Sj-Ggx">
-                                <rect key="frame" x="269" y="77" width="30" height="30"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lhB-2s-bVZ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="11a-tZ-PQC">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QFe-Sj-Ggx">
+                                <rect key="frame" x="274" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="i">
+                                <state key="normal" image="Information">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -632,12 +637,11 @@
                                     <segue destination="Tnc-uu-pMF" kind="push" identifier="basicInfoPage" id="ciu-Ca-Utz"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="lhB-2s-bVZ"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="confirmLoginButtonLabel" destination="UQi-m8-wH8" id="xf8-e3-Nwu"/>
+                        <outlet property="informationButtonLabel" destination="QFe-Sj-Ggx" id="zm4-Cf-0NP"/>
                         <outlet property="signUpButtonLabel" destination="wQM-q2-wKm" id="P8H-Nj-7dM"/>
                         <outlet property="userNameTextField" destination="MF3-FX-tz8" id="yre-Qv-ffh"/>
                         <outlet property="userPasswordTextField" destination="qch-GF-Ngt" id="Myq-Oe-mAT"/>
@@ -649,7 +653,7 @@
             </objects>
             <point key="canvasLocation" x="-1390" y="-639"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - How to do with this-->
         <scene sceneID="fjY-aj-wHf">
             <objects>
                 <viewController id="Tnc-uu-pMF" sceneMemberID="viewController">
@@ -662,35 +666,58 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nV9-20-g0H">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="751"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="902"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">App name:
- 'Book Recycle' 
-Author:
- Chao Huang
- chaoh@g.clemson.edu 
-Background:  
-I plan to explore an App which can help students borrow book among themselves. As we know, books sometimes are really expensive for some of the students. However, most of the books are used only one semester.  Normally, you have two choices: sell it or keep in your book store. Or you can choose to buy the e-book which is easy to store but have the similar price. 
-Now I can provide the third way: borrow it to someone strange and earn money from it.  
-The function includes:
-1.	Each user can sign up, login in search the current books available and see their details. The detail includes: book name, book owner, book author, return date and any other information (finished). 
-2.	User can also see their borrow history (on going). 
-3.	Book owners can see their books status (on going). 
-4.	User can give comment and stars to all the books (on going). 
-5.	Personal information protected (on going)
+                                <mutableString key="text">Login in page:
+I: login into the application
 
-How to use:
-You can click  'sign up' to sign your name and  password. Pay attention: repassword and password should be same.
-Or you can use my information 'chaoh' &amp; '123' You can search the book title. You do not need to remember the exact name. You can use some of the name such as 'ios'. I have already create three books related to 'ios' in the database. You can click each book to see the detail information
-</string>
+Sign up Page:
+I: Or you can go the sign up page 
+
+User profile Page:
+I: If login in, go the user profile page. you can click the "view history to go the 'search the history' page.
+
+
+Search history page:
+I. You can see your previous history record. You can click the "clear" button to clear all the records. 
+
+II. click one of the book "i" to see the detail
+
+III: You can also click "new search", goes to the new search page.
+
+New Search Page:
+I: input the name you want to search. 
+
+II: you can input part of the name
+
+III: click the book you interesting with
+
+Iv: you can see the related books accord with the input
+
+Book information page:
+I: you can click "like" to make it a positive mark to this book.
+
+II: you can see the borrower and owner's profile. 
+
+III: If this book is available, you can see a available image. Or there will be a "close" image.
+
+IV: click the "Borrow it" to borrow page
+
+Borrow page:
+I: input the days you want to keep and there is a value based on the book's each day value
+
+II: click the "submit" button to borrow it.
+
+
+</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1ld-34-sKy"/>
+                    <navigationItem key="navigationItem" title="How to do with this" id="1ld-34-sKy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ki6-Gg-Ydo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -716,6 +743,7 @@ Or you can use my information 'chaoh' &amp; '123' You can search the book titl
         </scene>
     </scenes>
     <resources>
+        <image name="Information" width="30" height="30"/>
         <image name="Welcome" width="450" height="200"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
