@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ConvenientTools : NSObject
++(UIImage *) getUserProFileByUserIDFromGlobalDatabase:(NSInteger) userid;
++(NSString *) getUserInfoByUserIDFromGlobalDatabase:(NSInteger) userid:(NSInteger) column;
 
 @end

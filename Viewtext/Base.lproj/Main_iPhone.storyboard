@@ -170,24 +170,11 @@
                                 <rect key="frame" x="34" y="70" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQO-xg-47U">
-                                <rect key="frame" x="190" y="70" width="110" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CurrentValue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-4z-00l">
-                                <rect key="frame" x="190" y="115" width="110" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95l-On-aP0">
-                                <rect key="frame" x="67" y="259" width="81" height="64"/>
+                                <rect key="frame" x="34" y="259" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="ViewHistory">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -195,10 +182,34 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOt-WO-gYo">
-                                <rect key="frame" x="190" y="259" width="97" height="64"/>
+                                <rect key="frame" x="128" y="259" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="ChangeProfile">
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToChangeProfilePageButton:" destination="rcd-Ex-60l" eventType="touchUpInside" id="Yme-3S-jWB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeS-el-Ni0">
+                                <rect key="frame" x="190" y="70" width="110" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnA-lL-fkd">
+                                <rect key="frame" x="34" y="213" width="271" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAb-kR-1X6">
+                                <rect key="frame" x="226" y="259" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -208,17 +219,61 @@
                     <navigationItem key="navigationItem" id="eU3-uU-sbW"/>
                     <connections>
                         <outlet property="changeProfileButtonProfile" destination="TOt-WO-gYo" id="vRt-T0-OKp"/>
-                        <outlet property="curerntUserName" destination="NQO-xg-47U" id="P23-nA-SGD"/>
+                        <outlet property="currentUserName" destination="JeS-el-Ni0" id="ZQb-d7-Yt0"/>
                         <outlet property="currentUserNameTitle" destination="eU3-uU-sbW" id="CDM-Xv-5wk"/>
                         <outlet property="currentUserProfile" destination="nnS-b7-uDI" id="jKV-NL-sBZ"/>
-                        <outlet property="currentUserValue" destination="pdT-4z-00l" id="Hpj-rr-mdV"/>
+                        <outlet property="currentUserValue" destination="gnA-lL-fkd" id="f7G-Ww-K01"/>
                         <outlet property="viewHistoryButtonProfile" destination="95l-On-aP0" id="RmM-Xy-6SR"/>
+                        <outlet property="viewMyBookButtonProfile" destination="pAb-kR-1X6" id="cM9-VT-3w3"/>
                         <segue destination="Rwn-pw-inF" kind="push" identifier="goToUserSearchDetail" id="9SJ-Ez-3f6"/>
+                        <segue destination="f5S-4q-F4h" kind="push" identifier="goToChangeProfilePage" id="18Q-YI-qTB"/>
+                        <segue destination="2T8-Lu-qmc" kind="push" identifier="goToMyBookMangePage" id="lHi-U0-R8B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9LE-Ks-9Py" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-791" y="-70"/>
+            <point key="canvasLocation" x="-813" y="-54"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8CK-SF-RrK">
+            <objects>
+                <viewController id="2T8-Lu-qmc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Iat-eh-3sD"/>
+                        <viewControllerLayoutGuide type="bottom" id="UOs-ub-yXr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RP0-Lp-rgs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZnI-jF-iWN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gj-2e-6Mw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-589" y="820"/>
+        </scene>
+        <!--Change User Profile View Controller-->
+        <scene sceneID="Jli-xx-fK6">
+            <objects>
+                <viewController id="f5S-4q-F4h" customClass="ChangeUserProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wQZ-29-7O4"/>
+                        <viewControllerLayoutGuide type="bottom" id="gJP-NW-r2D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nYn-Yd-plg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mcT-kI-7jb"/>
+                    <connections>
+                        <outlet property="changeProfileTitleLabel" destination="mcT-kI-7jb" id="qsd-eT-RMi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ifE-sV-aWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-247" y="58"/>
         </scene>
         <!--User Detail View Controller-->
         <scene sceneID="PeF-UG-etF">
@@ -669,7 +724,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="902"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">Login in page:
+                                <string key="text">Login in page:
 I: login into the application
 
 Sign up Page:
@@ -710,7 +765,7 @@ I: input the days you want to keep and there is a value based on the book's each
 II: click the "submit" button to borrow it.
 
 
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

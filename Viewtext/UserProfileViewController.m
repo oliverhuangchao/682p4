@@ -8,14 +8,31 @@
 
 #import "UserProfileViewController.h"
 #import "UserDetailViewController.h"
+#import "GetMethodsConnect.h"
+#import "ConvenientTools.h"
+#import "ChangeUserProfileViewController.h"
+
+
 @interface UserProfileViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *currentUserNameTitle;
-@property (weak, nonatomic) IBOutlet UIImageView *currentUserProfile;
-@property (weak, nonatomic) IBOutlet UILabel *curerntUserName;
+
+@property (weak, nonatomic) IBOutlet UILabel *currentUserName;
+
 @property (weak, nonatomic) IBOutlet UILabel *currentUserValue;
 
+@property (weak, nonatomic) IBOutlet UIImageView *currentUserProfile;
+
 @property (weak, nonatomic) IBOutlet UIButton *viewHistoryButtonProfile;
+
 @property (weak, nonatomic) IBOutlet UIButton *changeProfileButtonProfile;
+
+@property (weak, nonatomic) IBOutlet UIButton *viewMyBookButtonProfile;
+
+
+
+
+
+
 @end
 
 @implementation UserProfileViewController
@@ -32,8 +49,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
     self.currentUserNameTitle.title = self.userName;
+    
+    self.viewHistoryButtonProfile.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"history"]];
+    
+    self.changeProfileButtonProfile.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"change"]];
+    
+    self.currentUserProfile.image = [ConvenientTools getUserProFileByUserIDFromGlobalDatabase:self.userID];
+    
+    self.currentUserValue.text = [NSString stringWithFormat:@"Current value is 💰 %d",
+                                 [[ConvenientTools getUserInfoByUserIDFromGlobalDatabase:self.userID :4] integerValue]];
+    
+    self.currentUserName.text = [NSString stringWithFormat:@"%@",[ConvenientTools getUserInfoByUserIDFromGlobalDatabase:self.userID :1]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,6 +75,10 @@
     [self performSegueWithIdentifier:@"goToUserSearchDetail" sender:nil];
 
 }
+- (IBAction)goToChangeProfilePageButton:(id)sender {
+    [self performSegueWithIdentifier:@"goToChangeProfilePage" sender:nil];
+
+}
 
 -(void) showbasicInformation{
     
@@ -57,6 +89,11 @@
 {
     if([segue.identifier isEqualToString: @"goToUserSearchDetail"]){
         UserDetailViewController *controller = (UserDetailViewController *)segue.destinationViewController;
+        controller.currentUserName = self.userName;
+        controller.currentUserID = self.userID;
+    }
+    if([segue.identifier isEqualToString: @"goToChangeProfilePage"]){
+        ChangeUserProfileViewController *controller = (ChangeUserProfileViewController *)segue.destinationViewController;
         controller.currentUserName = self.userName;
         controller.currentUserID = self.userID;
     }
