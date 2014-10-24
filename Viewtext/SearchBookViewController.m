@@ -59,7 +59,11 @@
     self.TopBarTitleLabel.title = self.userName;
     
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"mynewdb.sql"];
-
+    
+    NSString *basic_URL = @"http://people.cs.clemson.edu/~chaoh/ios/searchAllBooks.php";
+    NSData *resultData = [GetMethodsConnect getContentFromPhp:basic_URL];
+    [self getResultFromData:resultData];
+   
     [self setUpForDismissKeyboard];
 
 }
@@ -122,7 +126,6 @@
 
         NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: picUrlString]];
      
-        //NSLog(@"%@",picUrlString);
         [self.bookProfilePic addObject:[UIImage imageWithData:imageData]];
     }
     
@@ -154,18 +157,21 @@
     
     self.searchBookPartName = self.searchBookNameTextField.text;
     
-    NSString *basic_URL = [NSString stringWithFormat:@"http://people.cs.clemson.edu/~chaoh/ios/searchBook.php?bookName=%@",self.searchBookPartName];
+    NSString *basic_URL = [NSString stringWithFormat:@"http://people.cs.clemson.edu/~chaoh/ios/searchBookByKeyword.php?bookName=%@",self.searchBookPartName];
     
     NSData *resultData = [GetMethodsConnect getContentFromPhp:basic_URL];
- 
+    [self getResultFromData:resultData];
+
+}
+
+- (void) getResultFromData: (NSData *) resultData
+{
     self.resultArray = [NSJSONSerialization JSONObjectWithData:resultData options:kNilOptions error:nil];
     
     for (int i = 0;i<self.resultArray.count;i++)
     {
-        //[self.bookListArray addObject:[[resultArray objectAtIndex:i] objectAtIndex:1]];
-        
         [self.resultBookName addObject:[[self.resultArray objectAtIndex:i] objectAtIndex:1]];
-
+        
         [self.resultBookProfile addObject:[[self.resultArray objectAtIndex:i] objectAtIndex:4]];
         
         [self.resultBookOwner addObject:[[self.resultArray objectAtIndex:i] objectAtIndex:3]];
@@ -193,7 +199,7 @@
         [self.bookListArray addObject:finalShowString];
         
     }
-
+    
     
     [self.searchBookTableView reloadData];
     self.showBookCountLabel.text = [NSString stringWithFormat:@"There are %d books in our store",self.resultBookName.count];

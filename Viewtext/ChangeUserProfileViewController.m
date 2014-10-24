@@ -2,50 +2,54 @@
 //  ChangeUserProfileViewController.m
 //  Viewtext
 //
-//  Created by Chao Huang on 10/9/14.
-//  Copyright (c) 2014 Clemson. All rights reserved.
+//  Created by HuangChao on 14/10/23.
+//  Copyright (c) 2014年 Clemson. All rights reserved.
 //
 
 #import "ChangeUserProfileViewController.h"
-
+#import "GetMethodsConnect.h"
 @interface ChangeUserProfileViewController ()
-@property (weak, nonatomic) IBOutlet UINavigationItem *changeProfileTitleLabel;
+@property (weak, nonatomic) IBOutlet UINavigationItem *currentUserNameTitleLabel;
 
+@property (nonatomic, strong) NSMutableArray* currentUserInfo;
 @end
 
 @implementation ChangeUserProfileViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.changeProfileTitleLabel.title = self.currentUserName;
+    
+    self.currentUserDetailProfileTableView.delegate = self;
+    self.currentUserDetailProfileTableView.dataSource = self;
+    
+    self.currentUserNameTitleLabel.title = self.currentUserName;
+    
+    NSString *basic_URL = [NSString stringWithFormat:@"http://people.cs.clemson.edu/~chaoh/ios/getUserInfoByID.php?userID=%d",self.currentUserID];
+    NSData *resultData = [GetMethodsConnect getContentFromPhp:basic_URL];
+    self.currentUserInfo  = [NSJSONSerialization JSONObjectWithData:resultData options:kNilOptions error:nil];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//click one of the cell and goes to another page
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"goToChangeSelectedItemPage" sender:self];
 }
-*/
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.currentUserInfo.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userInfoTableCell" forIndexPath:indexPath];
+    
+    cell.textLabel.text = [self.currentUserInfo objectAtIndex:indexPath.row];
+    //cell.detailTextLabel.text = [NSString stringWithFormat:@"Search Date is: %@",
+    return cell;
+}
 
 @end

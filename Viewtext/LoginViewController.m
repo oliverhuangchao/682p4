@@ -79,7 +79,7 @@
 
 - (IBAction)confirmLoginButton:(UIButton *)sender {
     
-    NSString *searchURL =[NSString stringWithFormat:@"http://people.cs.clemson.edu/~chaoh/ios/searchName.php?userName=%@&userPassword=%@",self.userName,self.userPassword];
+    NSString *searchURL =[NSString stringWithFormat:@"http://people.cs.clemson.edu/~chaoh/ios/loginByNameAndPassword.php?userName=%@&userPassword=%@",self.userName,self.userPassword];
   
     NSData *resultData = [GetMethodsConnect getContentFromPhp:searchURL];
     

@@ -49,9 +49,7 @@
     self.searchedBookHistoryTableView.delegate = self;
     self.searchedBookHistoryTableView.dataSource = self;
     
-   
-    //[self tempAddData];
-    [self loadLocalUserInfor];
+   [self loadLocalUserInfor];
   
 }
 

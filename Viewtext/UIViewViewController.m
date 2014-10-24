@@ -51,9 +51,9 @@
     self.LoveCount = [[self.searchedBookInfo objectAtIndex:8] intValue];
     self.bookBorrowPrice = [[self.searchedBookInfo objectAtIndex:5] intValue];
     
-    [self setBackground];
+    //[self setBackground];
     
-    self.LoveCountLabel.text = [NSString stringWithFormat:@"😍: %d 💰: %d", self.LoveCount, self.bookBorrowPrice];
+    self.LoveCountLabel.text = [NSString stringWithFormat:@"😍: %ld 💰: %ld", (long)self.LoveCount, (long)self.bookBorrowPrice];
 
     UIImage *img_back = [self getUIImageFromUrlString:[self.searchedBookInfo objectAtIndex:4]];
     CGFloat width = self.bookFacePic.frame.size.width;
@@ -75,7 +75,7 @@
  */
 -(NSString *) getImageStringFromDatabaseUsingUserID:(NSInteger) num;
 {
-    NSString *userProfileURLString = @"http://people.cs.clemson.edu/~chaoh/ios/getUserProfile.php?id=";
+    NSString *userProfileURLString = @"http://people.cs.clemson.edu/~chaoh/ios/getUserProfileByID.php?id=";
     NSData *userProfileData = [GetMethodsConnect getContentFromPhp:[userProfileURLString stringByAppendingString:[self.searchedBookInfo objectAtIndex:num]]];
     NSMutableArray *userProfileArray = [NSJSONSerialization JSONObjectWithData:userProfileData
                                                                        options:kNilOptions
@@ -101,6 +101,7 @@
 
 - (void) setBackground
 {
+    /*
     UIImage *img_back = [UIImage imageNamed:@"wood2"];
     CGFloat width = self.view.frame.size.width;
     CGFloat height = self.view.frame.size.height;
@@ -109,6 +110,7 @@
     img_back = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:img_back];
+     */
 }
 
 - (UIImage *) returnRentImage:(BOOL)isRent{
@@ -125,7 +127,7 @@
         [sender setTitle:@"Like" forState:UIControlStateNormal];
         self.LoveCount -- ;
     }
-    self.LoveCountLabel.text = [NSString stringWithFormat:@"😍: %d 💰: %d", self.LoveCount, self.bookBorrowPrice];
+    self.LoveCountLabel.text = [NSString stringWithFormat:@"😍: %ld 💰: %ld", (long)self.LoveCount, (long)self.bookBorrowPrice];
 
 }
 - (IBAction)borrowThisBookButton:(id)sender {

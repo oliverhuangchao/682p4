@@ -27,7 +27,11 @@
 		9520C4F719CE70CC006E0FD1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520C4F619CE70CC006E0FD1 /* LoginViewController.m */; };
 		9520C4FA19CE7386006E0FD1 /* GetMethodsConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520C4F919CE7386006E0FD1 /* GetMethodsConnect.m */; };
 		953434EA19E7437A0004642B /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953434E919E7437A0004642B /* UserProfileViewController.m */; };
-		953434ED19E786960004642B /* ChangeUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953434EC19E786960004642B /* ChangeUserProfileViewController.m */; };
+		954B73B919F9DD44005C3B6A /* ChangeUserPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954B73B819F9DD44005C3B6A /* ChangeUserPictureViewController.m */; };
+		954B73BC19F9DE40005C3B6A /* ChangeUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954B73BB19F9DE40005C3B6A /* ChangeUserProfileViewController.m */; };
+		954C494119F9D48C005EE874 /* ChangeUserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C494019F9D48C005EE874 /* ChangeUserNameViewController.m */; };
+		954C494419F9D510005EE874 /* ChangeUserPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C494319F9D510005EE874 /* ChangeUserPasswordViewController.m */; };
+		954C494A19F9D8F0005EE874 /* ChangeUserSelectedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C494919F9D8F0005EE874 /* ChangeUserSelectedItemViewController.m */; };
 		955FBDC719E61A53000EE1E3 /* BorrowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955FBDC619E61A53000EE1E3 /* BorrowDetailViewController.m */; };
 		955FBDCA19E625B7000EE1E3 /* ConvenientTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 955FBDC919E625B7000EE1E3 /* ConvenientTools.m */; };
 		9584332B19E08435007B0074 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9584332A19E08435007B0074 /* libsqlite3.dylib */; };
@@ -78,8 +82,16 @@
 		9520C4F919CE7386006E0FD1 /* GetMethodsConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetMethodsConnect.m; path = ../GetMethodsConnect.m; sourceTree = "<group>"; };
 		953434E819E7437A0004642B /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
 		953434E919E7437A0004642B /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
-		953434EB19E786960004642B /* ChangeUserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeUserProfileViewController.h; sourceTree = "<group>"; };
-		953434EC19E786960004642B /* ChangeUserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeUserProfileViewController.m; sourceTree = "<group>"; };
+		954B73B719F9DD44005C3B6A /* ChangeUserPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeUserPictureViewController.h; sourceTree = "<group>"; };
+		954B73B819F9DD44005C3B6A /* ChangeUserPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeUserPictureViewController.m; sourceTree = "<group>"; };
+		954B73BA19F9DE40005C3B6A /* ChangeUserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeUserProfileViewController.h; sourceTree = "<group>"; };
+		954B73BB19F9DE40005C3B6A /* ChangeUserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeUserProfileViewController.m; sourceTree = "<group>"; };
+		954C493F19F9D48C005EE874 /* ChangeUserNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeUserNameViewController.h; sourceTree = "<group>"; };
+		954C494019F9D48C005EE874 /* ChangeUserNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeUserNameViewController.m; sourceTree = "<group>"; };
+		954C494219F9D510005EE874 /* ChangeUserPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeUserPasswordViewController.h; path = ../ChangeUserPasswordViewController.h; sourceTree = "<group>"; };
+		954C494319F9D510005EE874 /* ChangeUserPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangeUserPasswordViewController.m; path = ../ChangeUserPasswordViewController.m; sourceTree = "<group>"; };
+		954C494819F9D8F0005EE874 /* ChangeUserSelectedItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeUserSelectedItemViewController.h; sourceTree = "<group>"; };
+		954C494919F9D8F0005EE874 /* ChangeUserSelectedItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeUserSelectedItemViewController.m; sourceTree = "<group>"; };
 		955FBDC519E61A53000EE1E3 /* BorrowDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorrowDetailViewController.h; sourceTree = "<group>"; };
 		955FBDC619E61A53000EE1E3 /* BorrowDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorrowDetailViewController.m; sourceTree = "<group>"; };
 		955FBDC819E625B7000EE1E3 /* ConvenientTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvenientTools.h; sourceTree = "<group>"; };
@@ -153,14 +165,18 @@
 		951BD8E919BDFE0C0047D195 /* Viewtext */ = {
 			isa = PBXGroup;
 			children = (
+				954B73BA19F9DE40005C3B6A /* ChangeUserProfileViewController.h */,
+				954B73BB19F9DE40005C3B6A /* ChangeUserProfileViewController.m */,
 				95E701A319E3876A00B4C91D /* mynewdb.sql */,
 				9520C4F819CE7386006E0FD1 /* GetMethodsConnect.h */,
 				9520C4F919CE7386006E0FD1 /* GetMethodsConnect.m */,
 				955FBDC819E625B7000EE1E3 /* ConvenientTools.h */,
 				955FBDC919E625B7000EE1E3 /* ConvenientTools.m */,
 				951BD8F519BDFE0C0047D195 /* Main_iPhone.storyboard */,
-				953434EB19E786960004642B /* ChangeUserProfileViewController.h */,
-				953434EC19E786960004642B /* ChangeUserProfileViewController.m */,
+				954C494219F9D510005EE874 /* ChangeUserPasswordViewController.h */,
+				954C494319F9D510005EE874 /* ChangeUserPasswordViewController.m */,
+				954C493F19F9D48C005EE874 /* ChangeUserNameViewController.h */,
+				954C494019F9D48C005EE874 /* ChangeUserNameViewController.m */,
 				953434E819E7437A0004642B /* UserProfileViewController.h */,
 				953434E919E7437A0004642B /* UserProfileViewController.m */,
 				955FBDC519E61A53000EE1E3 /* BorrowDetailViewController.h */,
@@ -182,6 +198,10 @@
 				9520C4F619CE70CC006E0FD1 /* LoginViewController.m */,
 				9584332C19E08522007B0074 /* DBManager.h */,
 				9584332D19E08522007B0074 /* DBManager.m */,
+				954C494819F9D8F0005EE874 /* ChangeUserSelectedItemViewController.h */,
+				954C494919F9D8F0005EE874 /* ChangeUserSelectedItemViewController.m */,
+				954B73B719F9DD44005C3B6A /* ChangeUserPictureViewController.h */,
+				954B73B819F9DD44005C3B6A /* ChangeUserPictureViewController.m */,
 			);
 			path = Viewtext;
 			sourceTree = "<group>";
@@ -322,15 +342,19 @@
 				95E2EFFD19BEAF650083AF1C /* BookDetails.m in Sources */,
 				9584332E19E08522007B0074 /* DBManager.m in Sources */,
 				951BD8F419BDFE0C0047D195 /* UIViewAppDelegate.m in Sources */,
+				954B73BC19F9DE40005C3B6A /* ChangeUserProfileViewController.m in Sources */,
 				9520C4FA19CE7386006E0FD1 /* GetMethodsConnect.m in Sources */,
+				954C494419F9D510005EE874 /* ChangeUserPasswordViewController.m in Sources */,
 				950ED39C19CF622E00DCEEB0 /* SearchBookViewController.m in Sources */,
-				953434ED19E786960004642B /* ChangeUserProfileViewController.m in Sources */,
 				950ED39919CF4A2800DCEEB0 /* SignUpViewController.m in Sources */,
 				95872B5319E1DFAC0064F9EC /* UserDetailViewController.m in Sources */,
 				955FBDC719E61A53000EE1E3 /* BorrowDetailViewController.m in Sources */,
 				953434EA19E7437A0004642B /* UserProfileViewController.m in Sources */,
 				955FBDCA19E625B7000EE1E3 /* ConvenientTools.m in Sources */,
+				954C494A19F9D8F0005EE874 /* ChangeUserSelectedItemViewController.m in Sources */,
+				954C494119F9D48C005EE874 /* ChangeUserNameViewController.m in Sources */,
 				951BD8FD19BDFE0C0047D195 /* UIViewViewController.m in Sources */,
+				954B73B919F9DD44005C3B6A /* ChangeUserPictureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
