@@ -29,6 +29,7 @@
 		953434EA19E7437A0004642B /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953434E919E7437A0004642B /* UserProfileViewController.m */; };
 		954B73B919F9DD44005C3B6A /* ChangeUserPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954B73B819F9DD44005C3B6A /* ChangeUserPictureViewController.m */; };
 		954B73BC19F9DE40005C3B6A /* ChangeUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954B73BB19F9DE40005C3B6A /* ChangeUserProfileViewController.m */; };
+		954B73BE19FA01D0005C3B6A /* ChangeUserItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954B73BD19FA01D0005C3B6A /* ChangeUserItem.xib */; };
 		954C494119F9D48C005EE874 /* ChangeUserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C494019F9D48C005EE874 /* ChangeUserNameViewController.m */; };
 		954C494419F9D510005EE874 /* ChangeUserPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C494319F9D510005EE874 /* ChangeUserPasswordViewController.m */; };
 		954C494A19F9D8F0005EE874 /* ChangeUserSelectedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C494919F9D8F0005EE874 /* ChangeUserSelectedItemViewController.m */; };
@@ -86,6 +87,7 @@
 		954B73B819F9DD44005C3B6A /* ChangeUserPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeUserPictureViewController.m; sourceTree = "<group>"; };
 		954B73BA19F9DE40005C3B6A /* ChangeUserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeUserProfileViewController.h; sourceTree = "<group>"; };
 		954B73BB19F9DE40005C3B6A /* ChangeUserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeUserProfileViewController.m; sourceTree = "<group>"; };
+		954B73BD19FA01D0005C3B6A /* ChangeUserItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeUserItem.xib; sourceTree = "<group>"; };
 		954C493F19F9D48C005EE874 /* ChangeUserNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeUserNameViewController.h; sourceTree = "<group>"; };
 		954C494019F9D48C005EE874 /* ChangeUserNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeUserNameViewController.m; sourceTree = "<group>"; };
 		954C494219F9D510005EE874 /* ChangeUserPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeUserPasswordViewController.h; path = ../ChangeUserPasswordViewController.h; sourceTree = "<group>"; };
@@ -190,6 +192,8 @@
 				951BD8F819BDFE0C0047D195 /* Main_iPad.storyboard */,
 				951BD8FB19BDFE0C0047D195 /* UIViewViewController.h */,
 				951BD8FC19BDFE0C0047D195 /* UIViewViewController.m */,
+				951BD8F219BDFE0C0047D195 /* UIViewAppDelegate.h */,
+				951BD8F319BDFE0C0047D195 /* UIViewAppDelegate.m */,
 				951BD8FE19BDFE0C0047D195 /* Images.xcassets */,
 				951BD8EA19BDFE0C0047D195 /* Supporting Files */,
 				95E2EFFB19BEAF650083AF1C /* BookDetails.h */,
@@ -199,6 +203,7 @@
 				9584332C19E08522007B0074 /* DBManager.h */,
 				9584332D19E08522007B0074 /* DBManager.m */,
 				954C494819F9D8F0005EE874 /* ChangeUserSelectedItemViewController.h */,
+				954B73BD19FA01D0005C3B6A /* ChangeUserItem.xib */,
 				954C494919F9D8F0005EE874 /* ChangeUserSelectedItemViewController.m */,
 				954B73B719F9DD44005C3B6A /* ChangeUserPictureViewController.h */,
 				954B73B819F9DD44005C3B6A /* ChangeUserPictureViewController.m */,
@@ -209,8 +214,6 @@
 		951BD8EA19BDFE0C0047D195 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				951BD8F219BDFE0C0047D195 /* UIViewAppDelegate.h */,
-				951BD8F319BDFE0C0047D195 /* UIViewAppDelegate.m */,
 				951BD8EB19BDFE0C0047D195 /* Viewtext-Info.plist */,
 				951BD8EC19BDFE0C0047D195 /* InfoPlist.strings */,
 				951BD8EF19BDFE0C0047D195 /* main.m */,
@@ -315,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				951BD8FA19BDFE0C0047D195 /* Main_iPad.storyboard in Resources */,
+				954B73BE19FA01D0005C3B6A /* ChangeUserItem.xib in Resources */,
 				951BD8FF19BDFE0C0047D195 /* Images.xcassets in Resources */,
 				951BD8F719BDFE0C0047D195 /* Main_iPhone.storyboard in Resources */,
 				95E701A419E3876A00B4C91D /* mynewdb.sql in Resources */,

@@ -7,17 +7,27 @@
 //
 
 #import "ChangeUserNameViewController.h"
-
+#import "ChangeUserSelectedItemViewController.h"
 @interface ChangeUserNameViewController ()
+
+//@property (weak, nonatomic) IBOutlet UINavigationItem *titleNavBar;
+@property (weak, nonatomic) IBOutlet UILabel *currentUserNameLabel;
 
 
 @end
 
+
 @implementation ChangeUserNameViewController
+
+@synthesize currentUserNameLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //self.titleNavBar.title = @"name";
+    self.currentUserNameLabel.text = self.currentUserName;
+   // ChangeUserSelectedItemViewController *parentBarController = (ChangeUserSelectedItemViewController *)self.tabBarController;
+   // self.currentUserNameLabel.text = self.currentUserName;
     
 }
 

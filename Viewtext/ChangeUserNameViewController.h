@@ -10,4 +10,7 @@
 
 @interface ChangeUserNameViewController : UIViewController
 
+@property(nonatomic,strong) NSString *currentUserName;
+@property(nonatomic) NSInteger currentUserID;
+
 @end

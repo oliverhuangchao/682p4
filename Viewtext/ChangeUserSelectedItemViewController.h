@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChangeUserSelectedItemViewController : UITabBarController
+@interface ChangeUserSelectedItemViewController : UITabBarController<UITabBarControllerDelegate>
 
 @property (nonatomic, retain) UITabBarController *tab;
 
+@property(nonatomic,strong) NSString *currentUserName;
+
+@property(nonatomic) NSInteger currentUserID;
 
 @end

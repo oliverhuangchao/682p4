@@ -527,7 +527,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZfV-8g-2Tn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="G5w-bD-oEC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -535,7 +535,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3oO-vX-lil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18" y="1287"/>
+            <point key="canvasLocation" x="-62" y="1225"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="9k5-3b-D2V">
@@ -546,8 +546,16 @@
                         <viewControllerLayoutGuide type="bottom" id="Hph-te-IL6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jvU-p4-Urr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="94" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Change Your Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2St-m1-KkZ">
+                                <rect key="frame" x="43" y="72" width="236" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="i38-kd-iy3"/>
@@ -565,34 +573,53 @@
                         <viewControllerLayoutGuide type="bottom" id="tr8-pe-BLN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OK2-SL-NNA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="94" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pleas Change Your Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BII-J6-dgq">
+                                <rect key="frame" x="62" y="72" width="196" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaS-HG-SCr">
+                                <rect key="frame" x="62" y="121" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="rrP-ti-Y0Q"/>
+                    <connections>
+                        <outlet property="currentUserNameLabel" destination="FaS-HG-SCr" id="nZN-wB-FUx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dV5-jD-9aS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="370" y="371"/>
+            <point key="canvasLocation" x="384" y="397"/>
         </scene>
         <!--Change User Selected Item View Controller-->
         <scene sceneID="OxR-d8-maq">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bVg-hg-Ieg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="Lua-eM-ZCj" customClass="ChangeUserSelectedItemViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="UkL-xg-1U6"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="JnY-fa-96t">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="JnY-fa-96t">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <outlet property="delegate" destination="UkL-xg-1U6" id="4hs-w5-fdw"/>
                         <segue destination="xjw-LQ-G3V" kind="relationship" relationship="viewControllers" id="x3o-cK-PWQ"/>
                         <segue destination="Hvo-bo-bJh" kind="relationship" relationship="viewControllers" id="pmC-zS-MaG"/>
-                        <segue destination="k3M-KB-1gb" kind="relationship" relationship="viewControllers" id="cp1-S3-neY"/>
+                        <segue destination="k3M-KB-1gb" kind="relationship" relationship="viewControllers" id="tzV-7Q-ScY"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bVg-hg-Ieg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-170" y="643"/>
         </scene>

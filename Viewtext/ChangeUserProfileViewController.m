@@ -8,6 +8,8 @@
 
 #import "ChangeUserProfileViewController.h"
 #import "GetMethodsConnect.h"
+#import "ChangeUserSelectedItemViewController.h"
+#import "ChangeUserNameViewController.h"
 @interface ChangeUserProfileViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *currentUserNameTitleLabel;
 
@@ -31,6 +33,16 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString: @"goToChangeSelectedItemPage"]){
+        ChangeUserSelectedItemViewController *controller = (ChangeUserSelectedItemViewController *)segue.destinationViewController;
+        controller.currentUserName = self.currentUserName;
+        controller.currentUserID = self.currentUserID;
+        
+        ChangeUserNameViewController *childController = (ChangeUserNameViewController *)segue.destinationViewController;
+        childController.currentUserName = self.currentUserName;
+        childController.currentUserID = self.currentUserID;
+    }
+
 }
 
 //click one of the cell and goes to another page
