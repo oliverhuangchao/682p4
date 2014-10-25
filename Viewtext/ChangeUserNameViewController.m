@@ -7,43 +7,51 @@
 //
 
 #import "ChangeUserNameViewController.h"
-#import "ChangeUserSelectedItemViewController.h"
+//#import "ChangeUserSelectedItemViewController.h"
+#import "GetMethodsConnect.h"
+
+
 @interface ChangeUserNameViewController ()
 
-//@property (weak, nonatomic) IBOutlet UINavigationItem *titleNavBar;
 @property (weak, nonatomic) IBOutlet UILabel *currentUserNameLabel;
-
+@property (weak, nonatomic) IBOutlet UITextField *userNameText;
 
 @end
 
 
 @implementation ChangeUserNameViewController
 
-@synthesize currentUserNameLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //self.titleNavBar.title = @"name";
+    self.userNameText.delegate = self;
     self.currentUserNameLabel.text = self.currentUserName;
-   // ChangeUserSelectedItemViewController *parentBarController = (ChangeUserSelectedItemViewController *)self.tabBarController;
-   // self.currentUserNameLabel.text = self.currentUserName;
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)ChangeUserNameBt:(id)sender {
+    NSString *basic_URL = [NSString stringWithFormat:@"http://people.cs.clemson.edu/~chaoh/ios/updateUserInfoByID.php?userID=%d&changeItem=userName&changeContent=%@",self.currentUserID,self.userNameText.text];
+    
+    NSData *resultData = [GetMethodsConnect getContentFromPhp:basic_URL];
+
+    NSString *resultString = [[NSString alloc] initWithData:resultData encoding:NSUTF8StringEncoding];
+    
+    //NSLog(@"%@",basic_URL);
+    if([resultString isEqualToString:@"yes"]){
+        [self.delegate editingInfoWasFinished];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else{
+        NSLog(@"fail");
+    }
 }
-*/
+
+
 
 @end

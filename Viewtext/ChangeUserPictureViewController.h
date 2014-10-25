@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChangeUserPictureViewController : UIViewController
+@interface ChangeUserPictureViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+
+
+//@property(nonatomic,strong) NSString *currentUserName;
+@property(nonatomic) NSInteger currentUserID;
 
 @end

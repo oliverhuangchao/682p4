@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChangeUserNameViewController : UIViewController
+@protocol ChangeUserNameViewControllerDelegate
+
+-(void)editingInfoWasFinished;
+
+@end
+
+
+@interface ChangeUserNameViewController : UIViewController <UITextFieldDelegate>
 
 @property(nonatomic,strong) NSString *currentUserName;
 @property(nonatomic) NSInteger currentUserID;
+@property (nonatomic, strong) id<ChangeUserNameViewControllerDelegate> delegate;
 
 @end

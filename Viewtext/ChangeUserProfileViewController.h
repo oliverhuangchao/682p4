@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChangeUserNameViewController.h"
+@interface ChangeUserProfileViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, ChangeUserNameViewControllerDelegate>
 
-@interface ChangeUserProfileViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+
+
 
 @property (nonatomic,strong) NSString* currentUserName;
 @property (nonatomic) NSInteger currentUserID;
-
 @property (weak, nonatomic) IBOutlet UITableView *currentUserDetailProfileTableView;
 
 @end

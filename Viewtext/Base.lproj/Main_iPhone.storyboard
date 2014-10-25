@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rro-4j-8xV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1697" y="590"/>
+            <point key="canvasLocation" x="-1407" y="18"/>
         </scene>
         <!--User Profile View Controller-->
         <scene sceneID="rra-Up-WU8">
@@ -237,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gj-2e-6Mw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1209" y="733"/>
+            <point key="canvasLocation" x="-1031" y="607"/>
         </scene>
         <!--Change User Profile View Controller-->
         <scene sceneID="Jli-xx-fK6">
@@ -279,12 +279,13 @@
                     <connections>
                         <outlet property="currentUserDetailProfileTableView" destination="Vcr-vK-byT" id="dVB-Nx-pNj"/>
                         <outlet property="currentUserNameTitleLabel" destination="mcT-kI-7jb" id="i23-Yu-QH4"/>
-                        <segue destination="Lua-eM-ZCj" kind="push" identifier="goToChangeSelectedItemPage" id="QLk-rV-qOj"/>
+                        <segue destination="xjw-LQ-G3V" kind="push" identifier="goToChangeNamePage" id="9yA-FH-mYs"/>
+                        <segue destination="k3M-KB-1gb" kind="push" identifier="goToChangePicturePage" id="396-P0-PdL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifE-sV-aWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-261" y="-66"/>
+            <point key="canvasLocation" x="-261" y="-40"/>
         </scene>
         <!--User Detail View Controller-->
         <scene sceneID="PeF-UG-etF">
@@ -527,15 +528,56 @@
                         <viewControllerLayoutGuide type="bottom" id="ZfV-8g-2Tn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="G5w-bD-oEC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pleas Change Your Photo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8O-6J-NWr">
+                                <rect key="frame" x="62" y="87" width="196" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tca-Eo-fTX">
+                                <rect key="frame" x="128" y="130" width="64" height="64"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vfB-mp-qIF">
+                                <rect key="frame" x="128" y="275" width="64" height="64"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSD-Ay-ZEe">
+                                <rect key="frame" x="136" y="368" width="48" height="30"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SearchNewPicFromLocal:" destination="k3M-KB-1gb" eventType="touchUpInside" id="Qvg-01-elJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="8xj-qt-YsL"/>
+                    <navigationItem key="navigationItem" id="zuW-h3-Ygd">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ndw-dL-h1w">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a3z-pM-NLB">
+                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeUserPictureBt:" destination="k3M-KB-1gb" eventType="touchUpInside" id="29B-J9-2os"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="userCurrentPicture" destination="Tca-Eo-fTX" id="8B6-em-nRR"/>
+                        <outlet property="userNewPicture" destination="vfB-mp-qIF" id="xou-I1-rSx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3oO-vX-lil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-62" y="1225"/>
+            <point key="canvasLocation" x="134" y="587"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="9k5-3b-D2V">
@@ -546,7 +588,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Hph-te-IL6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jvU-p4-Urr">
-                        <rect key="frame" x="0.0" y="94" width="320" height="431"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Change Your Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2St-m1-KkZ">
@@ -562,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0H-Dn-K8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="370" y="949"/>
+            <point key="canvasLocation" x="560" y="581"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="wt8-Pr-4e7">
@@ -573,7 +615,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tr8-pe-BLN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OK2-SL-NNA">
-                        <rect key="frame" x="0.0" y="94" width="320" height="431"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pleas Change Your Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BII-J6-dgq">
@@ -583,45 +625,42 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaS-HG-SCr">
-                                <rect key="frame" x="62" y="121" width="42" height="21"/>
+                                <rect key="frame" x="62" y="121" width="196" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jij-FR-pE4">
+                                <rect key="frame" x="62" y="183" width="196" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="rrP-ti-Y0Q"/>
+                    <navigationItem key="navigationItem" id="hNe-ZK-oEL">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="DAC-L8-VIZ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GL8-Ah-9GS">
+                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChangeUserNameBt:" destination="xjw-LQ-G3V" eventType="touchUpInside" id="dOH-ho-qOx"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentUserNameLabel" destination="FaS-HG-SCr" id="nZN-wB-FUx"/>
+                        <outlet property="userNameText" destination="Jij-FR-pE4" id="IZL-nq-IYb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dV5-jD-9aS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="384" y="397"/>
-        </scene>
-        <!--Change User Selected Item View Controller-->
-        <scene sceneID="OxR-d8-maq">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bVg-hg-Ieg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController id="Lua-eM-ZCj" customClass="ChangeUserSelectedItemViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="UkL-xg-1U6"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="JnY-fa-96t">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <outlet property="delegate" destination="UkL-xg-1U6" id="4hs-w5-fdw"/>
-                        <segue destination="xjw-LQ-G3V" kind="relationship" relationship="viewControllers" id="x3o-cK-PWQ"/>
-                        <segue destination="Hvo-bo-bJh" kind="relationship" relationship="viewControllers" id="pmC-zS-MaG"/>
-                        <segue destination="k3M-KB-1gb" kind="relationship" relationship="viewControllers" id="tzV-7Q-ScY"/>
-                    </connections>
-                </tabBarController>
-            </objects>
-            <point key="canvasLocation" x="-170" y="643"/>
+            <point key="canvasLocation" x="-261" y="575"/>
         </scene>
         <!--Owner-->
         <scene sceneID="ghZ-aw-mwj">
@@ -897,6 +936,6 @@ II: click the "submit" button to borrow it.
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="47e-Xl-Uwi"/>
+        <segue reference="tiv-k1-Fs6"/>
     </inferredMetricsTieBreakers>
 </document>
