@@ -35,6 +35,8 @@
 		954C494A19F9D8F0005EE874 /* ChangeUserSelectedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954C494919F9D8F0005EE874 /* ChangeUserSelectedItemViewController.m */; };
 		955FBDC719E61A53000EE1E3 /* BorrowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955FBDC619E61A53000EE1E3 /* BorrowDetailViewController.m */; };
 		955FBDCA19E625B7000EE1E3 /* ConvenientTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 955FBDC919E625B7000EE1E3 /* ConvenientTools.m */; };
+		956AEE7419FC38EC00FB1699 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 956AEE7319FC38EC00FB1699 /* Settings.bundle */; };
+		956AEE7619FC45D100FB1699 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956AEE7519FC45D100FB1699 /* MediaPlayer.framework */; };
 		9584332B19E08435007B0074 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9584332A19E08435007B0074 /* libsqlite3.dylib */; };
 		9584332E19E08522007B0074 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9584332D19E08522007B0074 /* DBManager.m */; };
 		95872B5319E1DFAC0064F9EC /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95872B5219E1DFAC0064F9EC /* UserDetailViewController.m */; };
@@ -98,6 +100,8 @@
 		955FBDC619E61A53000EE1E3 /* BorrowDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorrowDetailViewController.m; sourceTree = "<group>"; };
 		955FBDC819E625B7000EE1E3 /* ConvenientTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvenientTools.h; sourceTree = "<group>"; };
 		955FBDC919E625B7000EE1E3 /* ConvenientTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvenientTools.m; sourceTree = "<group>"; };
+		956AEE7319FC38EC00FB1699 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		956AEE7519FC45D100FB1699 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		9584332A19E08435007B0074 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9584332C19E08522007B0074 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		9584332D19E08522007B0074 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				956AEE7619FC45D100FB1699 /* MediaPlayer.framework in Frameworks */,
 				9584332B19E08435007B0074 /* libsqlite3.dylib in Frameworks */,
 				951BD8E619BDFE0C0047D195 /* CoreGraphics.framework in Frameworks */,
 				951BD8E819BDFE0C0047D195 /* UIKit.framework in Frameworks */,
@@ -136,6 +141,7 @@
 		951BD8D719BDFE0C0047D195 = {
 			isa = PBXGroup;
 			children = (
+				956AEE7319FC38EC00FB1699 /* Settings.bundle */,
 				951BD8E919BDFE0C0047D195 /* Viewtext */,
 				951BD90B19BDFE0C0047D195 /* ViewtextTests */,
 				951BD8E219BDFE0C0047D195 /* Frameworks */,
@@ -155,6 +161,7 @@
 		951BD8E219BDFE0C0047D195 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				956AEE7519FC45D100FB1699 /* MediaPlayer.framework */,
 				9584332A19E08435007B0074 /* libsqlite3.dylib */,
 				951BD8E319BDFE0C0047D195 /* Foundation.framework */,
 				951BD8E519BDFE0C0047D195 /* CoreGraphics.framework */,
@@ -323,6 +330,7 @@
 				951BD8F719BDFE0C0047D195 /* Main_iPhone.storyboard in Resources */,
 				95E701A419E3876A00B4C91D /* mynewdb.sql in Resources */,
 				951BD8EE19BDFE0C0047D195 /* InfoPlist.strings in Resources */,
+				956AEE7419FC38EC00FB1699 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "ChangeUserPictureViewController.h"
 #import "ConvenientTools.h"
+#import "GetMethodsConnect.h"
 @interface ChangeUserPictureViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *userCurrentPicture;
@@ -80,7 +81,10 @@
      getting the image back out of the UIImageView
      setting the quality to 90
      */
-    NSData *imageData = UIImageJPEGRepresentation(self.saveImage, 90);
+    UIImage *newImage = [self imageWithImage:self.saveImage scaledToSize:CGSizeMake(64, 64)];
+
+    
+    NSData *imageData = UIImagePNGRepresentation(newImage);
     // setting up the URL to post to
     NSString *urlString = @"http://people.cs.clemson.edu/~chaoh/ios/uploadPicture.php";
     
@@ -118,30 +122,48 @@
     
     NSMutableData *body = [NSMutableData data];
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[@"Content-Disposition: attachment; name=\"userfile\"; filename=\"davesfile.jpg\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: attachment; name=\"userfile\"; filename=\"%d.png\"\r\n",self.currentUserID] dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[NSData dataWithData:imageData]];
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPBody:body];
     
     NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    //NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     
-    NSLog(@"%@",returnString);
+    //NSLog(@"%@",returnString);
     
     
-    /*
-    NSHTTPURLResponse *response;
+    NSString *basic_URL = [NSString stringWithFormat:@"http://people.cs.clemson.edu/~chaoh/ios/updateUserInfoByID.php?userID=%d&changeItem=userProfile&changeContent=%@",self.currentUserID,[NSString stringWithFormat:@"%d.png",self.currentUserID]];
     
-    NSData* resultData  = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    NSData *resultData = [GetMethodsConnect getContentFromPhp:basic_URL];
     
-    NSString *resultString = [[NSString alloc] initWithData:resultData encoding:NSUTF8StringEncoding];
+    NSString *changeProfileString = [[NSString alloc] initWithData:resultData encoding:NSUTF8StringEncoding];
     
-    NSLog(@"%@", resultString);
-     */
-    
-   // NSLog(@"the height is %f, and the width is %f",self.saveImage.size.height,self.saveImage.size.width);
+    if([changeProfileString isEqualToString:@"yes"]){
+        //[self.delegate editingInfoWasFinished];
+        [self.navigationController popViewControllerAnimated:YES];
+        NSLog(@"successful");
+    }
+    else{
+        NSLog(@"fail");
+    }
 }
+
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+
+
+
 
 - (IBAction)changeUserPictureBt:(id)sender {
     [self uploadImage];

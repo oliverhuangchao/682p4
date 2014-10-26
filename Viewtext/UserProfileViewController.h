@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
+
 
 @interface UserProfileViewController : UIViewController
 
 @property (nonatomic,strong) NSString *userName;
 @property (nonatomic) NSInteger userID;
+
+@property (nonatomic,strong) MPMoviePlayerController *moviePlayer;
 
 
 @end

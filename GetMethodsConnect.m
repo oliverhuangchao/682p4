@@ -13,6 +13,7 @@
 + (NSData *) getContentFromPhp:(NSString *)urlstring
 {
     NSURL *url = [NSURL URLWithString:urlstring];
+   // NSLog(@"%@",url);
     NSMutableURLRequest *requests = [[NSMutableURLRequest alloc]initWithURL:url
                                                                 cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                             timeoutInterval:50];

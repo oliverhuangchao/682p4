@@ -10,4 +10,6 @@
 
 @interface ChangeUserPasswordViewController : UIViewController
 
+@property(nonatomic) NSInteger currentUserID;
+
 @end

@@ -11,7 +11,7 @@
 #import "SignUpViewController.h"
 #import "SearchBookViewController.h"
 #import "UserProfileViewController.h"
-
+#import "UIViewAppDelegate.h"
 
 
 @interface LoginViewController ()
@@ -24,6 +24,8 @@
 
 @property (nonatomic) NSString *userName;
 @property (nonatomic) NSString *userPassword;
+
+@property (nonatomic) BOOL setBackground;
 //@property (nonatomic) UIAlertView *alert;
 
 @end
@@ -32,6 +34,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    /*
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSString* tmp =  [defaults stringForKey:@"myKeyName"];
+    
+    if ([tmp isEqualToString:@"1"]) {
+        NSLog(@"green");
+        self.view.backgroundColor = [UIColor greenColor];
+    }
+    else{
+        NSLog(@"red");
+        self.view.backgroundColor = [UIColor redColor];
+    }
+    */
+    //UIViewAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    //appDelegate.window.rootViewController = self;
     
     //self.informationButtonLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Information"]];
     
@@ -40,8 +57,22 @@
     self.signUpButtonLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"signup"]];
     
     [self setUpForDismissKeyboard];
+}
+
+- (void) viewWillAppear:(BOOL)animated{
     
-    // Do any additional setup after loading the view.
+    UIViewAppDelegate *app = (UIViewAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSString* tmp =  [defaults stringForKey:@"myKeyName"];
+    
+    if (app.backgroundFlag) {//[tmp isEqualToString:@"1"]
+        NSLog(@"green");
+        self.view.backgroundColor = [UIColor greenColor];
+    }
+    else{
+        NSLog(@"red");
+        self.view.backgroundColor = [UIColor redColor];
+    }
 }
 
 - (void) setUpForDismissKeyboard{
@@ -80,13 +111,11 @@
 - (IBAction)confirmLoginButton:(UIButton *)sender {
     
     NSString *searchURL =[NSString stringWithFormat:@"http://people.cs.clemson.edu/~chaoh/ios/loginByNameAndPassword.php?userName=%@&userPassword=%@",self.userName,self.userPassword];
-  
+    
     NSData *resultData = [GetMethodsConnect getContentFromPhp:searchURL];
     
     NSString *resultString = [[NSString alloc] initWithData:resultData
                                                   encoding:NSUTF8StringEncoding];
-    
-    //NSLog(@"%@",searchURL);
     
     if ([resultString isEqual: @"yes"]){
         //SearchBookViewController *next = [self.storyboard instantiateViewControllerWithIdentifier:@"UserDetailPage"];
@@ -96,10 +125,15 @@
         
         //get userID here
         searchURL =[NSString stringWithFormat:@"http://people.cs.clemson.edu/~chaoh/ios/getUserIDbyUserName.php?name=%@&password=%@",self.userName,self.userPassword];
+        
+        
         NSData *resultData = [GetMethodsConnect getContentFromPhp:searchURL];
+        
         NSArray *resultArray = [NSJSONSerialization JSONObjectWithData:resultData options:kNilOptions error:nil];
+        
         self.userID =[[resultArray objectAtIndex:0] integerValue] ;
 
+        
         [self performSegueWithIdentifier:@"isLoginCorrect" sender:nil];
 
         

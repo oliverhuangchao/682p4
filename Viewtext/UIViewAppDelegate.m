@@ -7,7 +7,7 @@
 //
 
 #import "UIViewAppDelegate.h"
-
+#import "LoginViewController.h"
 @implementation UIViewAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -36,6 +36,24 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSString* tmp = [defaults stringForKey:@"myKeyName"];
+  
+    //LoginViewController *loginnew;
+    //self.window.rootViewController;
+   // LoginViewController* loginNew = (LoginViewController *)self.window.rootViewController;
+   // LoginViewController *appDelegate = (LoginViewController *)[[UIApplication sharedApplication] delegate];
+
+    if ([tmp isEqualToString:@"1"]) {
+        NSLog(@"green");
+        self.backgroundFlag = YES;
+    }
+    else{
+        NSLog(@"red");
+        self.backgroundFlag = NO;
+
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

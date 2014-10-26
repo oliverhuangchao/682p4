@@ -29,13 +29,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *viewMyBookButtonProfile;
 
 
-
-
-
-
 @end
 
+
 @implementation UserProfileViewController
+
+
+@synthesize moviePlayer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,6 +62,20 @@
                                  [[ConvenientTools getUserInfoByUserIDFromGlobalDatabase:self.userID :4] integerValue]];
     
     self.currentUserName.text = [NSString stringWithFormat:@"%@",[ConvenientTools getUserInfoByUserIDFromGlobalDatabase:self.userID :1]];
+    
+    
+    NSURL *movieURL = [[NSURL alloc] initWithString:@"http://people.cs.clemson.edu/~chaoh/ios/vedio/nature.mp4"];//http://people.cs.clemson.edu/~ghan/bike.mp4
+    moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:movieURL];
+    
+    [moviePlayer.view setFrame:CGRectMake(20, 350, 250, 200)];
+    
+    [self.view addSubview:moviePlayer.view];
+    
+    moviePlayer.fullscreen = YES;
+    moviePlayer.shouldAutoplay = YES;
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
